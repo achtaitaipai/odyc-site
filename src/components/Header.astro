@@ -3,7 +3,6 @@ import { getLangFromUrl, useTranslations } from "../lib/i18n/utils";
 
 import { languages } from "../lib/i18n/ui.ts";
 import Dropdown from "./Dropdown.svelte";
-import Paint from "./Paint/index.svelte";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
