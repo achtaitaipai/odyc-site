@@ -7,6 +7,7 @@
   import { onMount } from "svelte";
   import { languages, ui } from "../lib/i18n/ui.ts";
   import { useTranslations } from "../lib/i18n/utils";
+  import Button from "./Button.svelte";
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);
   let currentCode = "";
@@ -77,10 +78,8 @@
     <div class="container mx-auto flex items-center gap-4 h-full">
       <Paint {lang}>{t("paint")}</Paint>
       <Sound {lang}>{t("sound")}</Sound>
-      <button
-        class="bg-gray-100 rounded px-2 py-1.5 flex ml-auto"
-        on:click={() => inputFile.click()}>{t("playground.open")}</button
-      >
+      <span class="grow" aria-hidden="true"></span>
+      <Button on:click={() => inputFile.click()}>{t("playground.open")}</Button>
       <input
         type="file"
         class="hidden"
@@ -88,10 +87,7 @@
         on:change={handleFileLoad}
         bind:this={inputFile}
       />
-      <button
-        class="bg-gray-100 rounded px-2 py-1.5 flex"
-        on:click={downloadFile}>{t("playground.download")}</button
-      >
+      <Button on:click={downloadFile}>{t("playground.download")}</Button>
     </div>
   </div>
 </main>

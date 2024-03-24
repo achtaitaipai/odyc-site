@@ -11,7 +11,7 @@
   <button
     on:click={() => (isOpen = !isOpen)}
     on:keydown={handleKeydown}
-    class="bg-white px-2 py-3 text-left inline-flex gap-1.5 items-center"
+    class=" px-2 py-3 text-left inline-flex gap-1.5 items-center"
     aria-expanded={isOpen}
     aria-haspopup="menu"
   >

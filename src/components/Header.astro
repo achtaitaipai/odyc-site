@@ -8,7 +8,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="bg-white border-b flex h-[var(--header-height)] items-center">
+<header
+  class="bg-violet-900 text-gray-50 border-b flex h-[var(--header-height)] items-center"
+>
   <div class="container mx-auto gap-6 flex items-center">
     <a href="/">
       <svg
@@ -44,7 +46,7 @@ const t = useTranslations(lang);
     </nav>
     <Dropdown client:idle>
       <span slot="current" class="">{languages[lang]}</span>
-      <ul class="shadow grid gap-4 px-4 py-4 w-32">
+      <ul class="shadow grid gap-4 px-4 py-4 w-32 text-gray-900">
         {
           Object.keys(languages).map((el) => {
             //@ts-ignore

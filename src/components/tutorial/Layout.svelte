@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { languages } from "../../lib/i18n/ui.ts";
   import { useTranslations } from "../../lib/i18n/utils.ts";
+  import Button from "../Button.svelte";
   import Editor from "./Editor.svelte";
 
   export let baseCode: string;
@@ -31,16 +32,10 @@
     <div class="flex h-16 items-center bg-white px-4 shadow">
       <div class="flex gap-4">
         {#if currentCode !== baseCode}
-          <button
-            class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={resetCode}>{t("tutorial.reset")}</button
-          >
+          <Button on:click={resetCode}>{t("tutorial.reset")}</Button>
         {/if}
         {#if currentCode !== solutionCode}
-          <button
-            class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={solveCode}>{t("tutorial.solve")}</button
-          >
+          <Button on:click={solveCode}>{t("tutorial.solve")}</Button>
         {/if}
       </div>
       <nav class="ml-auto">

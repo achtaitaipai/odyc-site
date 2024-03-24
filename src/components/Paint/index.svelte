@@ -13,6 +13,7 @@
   import { tick } from "svelte";
   import type { languages } from "../../lib/i18n/ui.ts";
   import { useTranslations } from "../../lib/i18n/utils.ts";
+  import Button from "../Button.svelte";
 
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);
@@ -77,19 +78,15 @@
 </script>
 
 <div class="relative" use:click_outside={() => (isOpen = false)}>
-  <button
-    on:click={() => (isOpen = !isOpen)}
-    on:keydown={handleKeyDown}
-    class="bg-gray-100 rounded px-2 py-1.5 flex"
-  >
+  <Button on:click={() => (isOpen = !isOpen)} on:keydown={handleKeyDown}>
     <slot />
-  </button>
+  </Button>
 
   {#if isOpen}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <!-- svelte-ignore a11y-positive-tabindex -->
     <dialog
-      class="shadow p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
+      class="border-blue-400 shadow border-2 rounded p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
       transition:fade
       on:keydown={handleKeyDown}
     >
@@ -159,10 +156,7 @@
           </label>
         </div>
         <div class="py-1 flex items-center gap-4 justify-end">
-          <button
-            class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={copyToClipBoard}>{t("paint.copy")}</button
-          >
+          <Button on:click={copyToClipBoard}>{t("paint.copy")}</Button>
         </div>
       </div>
     </dialog>

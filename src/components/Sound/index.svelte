@@ -10,6 +10,7 @@
     type FxKey,
   } from "../../lib/jfxr/index.ts";
   import { onMount } from "svelte";
+  import Button from "../Button.svelte";
 
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);
@@ -43,18 +44,14 @@
 </script>
 
 <div class="relative" use:click_outside={() => (isOpen = false)}>
-  <button
-    on:click={() => (isOpen = !isOpen)}
-    on:keydown={handleKeyDown}
-    class="bg-gray-100 rounded px-2 py-1.5 flex"
-  >
+  <Button on:click={() => (isOpen = !isOpen)} on:keydown={handleKeyDown}>
     <slot />
-  </button>
+  </Button>
   {#if isOpen}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <!-- svelte-ignore a11y-positive-tabindex -->
     <dialog
-      class="shadow p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
+      class="border-blue-400 shadow border-2 rounded p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
       transition:fade
       on:keydown={handleKeyDown}
     >
@@ -75,14 +72,8 @@
           />
         </div>
         <div class="flex gap-4 justify-end">
-          <button
-            class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={playSound}>{t("sound.play")}</button
-          >
-          <button
-            class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={copyToClipBoard}>{t("sound.copy")}</button
-          >
+          <Button on:click={playSound}>{t("sound.play")}</Button>
+          <Button on:click={copyToClipBoard}>{t("sound.copy")}</Button>
         </div>
       </div>
     </dialog>
