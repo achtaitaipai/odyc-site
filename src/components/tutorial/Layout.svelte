@@ -18,9 +18,9 @@
   };
 </script>
 
-<main class="grid grid-cols-5">
+<main class="grid sm:grid-cols-5">
   <div
-    class="flex flex-col col-span-2 h-[calc(100svh_-_var(--header-height))] border-r"
+    class="flex flex-col sm:col-span-2 h-[calc(100svh_-_var(--header-height))] border-r"
   >
     <div class="shrink-0 bg-white items-center shadow-sm">
       <slot name="header" />

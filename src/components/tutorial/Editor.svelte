@@ -14,7 +14,7 @@
 </script>
 
 <div
-  class="grid grid-rows-2 grow h-[calc(100svh_-_var(--header-height))] col-span-3"
+  class="grid sm:grid-rows-2 grow h-svh sm:h-[calc(100svh_-_var(--header-height))] sm:col-span-3"
 >
   <Editor
     lang={javascript()}
