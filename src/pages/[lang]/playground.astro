@@ -1,9 +1,8 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Header from "../../components/Header.astro";
 import Editor from "../../components/Playground.svelte";
-import { languages } from "../../lib/i18n/ui.js";
 import Base from "../../layouts/Base.astro";
+import { languages } from "../../lib/i18n/ui.js";
 
 export const getStaticPaths = (() => {
   return Object.keys(languages).map((lang) => ({

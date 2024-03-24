@@ -44,7 +44,9 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
     <div slot="header" class="px-4">
       <Dropdown client:idle>
         <h1 class="text-lg font-semibold" slot="current">{title}</h1>
-        <ul class="grid gap-4 py-4 pl-4 shadow w-60 max-h-80 overflow-auto">
+        <ul
+          class="grid gap-4 py-4 pl-4 pr-2 shadow w-80 max-h-80 overflow-auto"
+        >
           {
             tutorials.map((el, i) => (
               <li class="">

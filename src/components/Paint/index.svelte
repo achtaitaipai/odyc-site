@@ -11,6 +11,11 @@
     stringToGrid,
   } from "./utils.ts";
   import { tick } from "svelte";
+  import type { languages } from "../../lib/i18n/ui.ts";
+  import { useTranslations } from "../../lib/i18n/utils.ts";
+
+  export let lang: keyof typeof languages;
+  const t = useTranslations(lang);
 
   let isOpen = false;
   let colors = defaultColors;
@@ -129,7 +134,7 @@
         <div class="flex flex-col py-1 gap-2">
           <label
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Width :
+            >{t("paint.width")} :
             <input
               type="range"
               min="2"
@@ -142,7 +147,7 @@
 
           <label
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Height :
+            >{t("paint.width")} :
             <input
               type="range"
               min="2"
@@ -156,7 +161,7 @@
         <div class="py-1 flex items-center gap-4 justify-end">
           <button
             class="bg-gray-100 rounded px-2 py-1.5 flex"
-            on:click={copyToClipBoard}>Copy</button
+            on:click={copyToClipBoard}>{t("paint.copy")}</button
           >
         </div>
       </div>

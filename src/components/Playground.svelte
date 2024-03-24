@@ -1,5 +1,6 @@
 <script lang="ts" type="module">
   import Paint from "./Paint/index.svelte";
+  import Sound from "./Sound/index.svelte";
   import Editor from "svelte-codemirror-editor";
   import { parseCode, prepareCode, updateIframe } from "../lib/processCode.ts";
   import { javascript } from "@codemirror/lang-javascript";
@@ -74,7 +75,8 @@
   </div>
   <div class=" bg-white shadow col-span-2 h-[var(--footer-height)] px-4">
     <div class="container mx-auto flex items-center gap-4 h-full">
-      <Paint>Paint</Paint>
+      <Paint {lang}>{t("paint")}</Paint>
+      <Sound {lang}>{t("sound")}</Sound>
       <button
         class="bg-gray-100 rounded px-2 py-1.5 flex ml-auto"
         on:click={() => inputFile.click()}>{t("playground.open")}</button
