@@ -38,6 +38,7 @@
   };
   const copyToClipBoard = () => {
     navigator.clipboard.writeText(`createSound('${currentTemplate}', ${seed})`);
+    isOpen = false;
   };
 </script>
 
