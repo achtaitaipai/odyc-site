@@ -1,5 +1,5 @@
 ---
-title: La cible de l'évènement
+title: Manipulation de la Cible de l'Événement
 base: |
   createGame({
     templates: {
@@ -41,16 +41,40 @@ solution: |
   })
 ---
 
-Vous vous demandez sûrement à quoi correspond `target.remove()` de la section précédente.
+Dans la section précédente, `target.remove()` a été introduit comme moyen de supprimer un objet du jeu. Cependant, l'objet cible (`target`) dans les fonctions `onCollide`, `onEnter`, ou `onLeave` offre bien plus de possibilités.
 
-Les fonctions définies pour `onCollide`, `onEnter` ou `onLeave` sont appelées avec en paramètre l'objet cible.
+### Propriétés Modifiables
 
-Ce paramètre permet de modifier certaines propriétés ou même de supprimer l'objet.
+Quand un événement est déclenché, l'objet cible est passé en paramètre à la fonction associée. Cela vous permet de modifier ou même de supprimer l'objet en question. Voici les propriétés que vous pouvez lire et modifier :
 
-Vous pouvez lire et modifier les propriétés suivantes: `sprite`, `dialog`, `solid`, `visible`, `sound` et `end`.
+- **Sprite (`sprite`)** : Change l'apparence de l'objet.
+- **Dialogue (`dialog`)** : Modifie le texte à afficher lors de l'interaction.
+- **Solidité (`solid`)** : Détermine si l'objet est traversable.
+- **Visibilité (`visible`)** : Contrôle l'affichage de l'objet.
+- **Son (`sound`)** : Change le son joué lors de l'interaction.
+- **Fin (`end`)** : Définit un message de fin ou une action de conclusion.
 
-Vous pouvez lire les propriétés: `symbol` et `position`
+### Propriétés en Lecture Seule
 
-Vous pouvez supprimer l'objet avec la méthode `remove`.
+Certaines propriétés sont uniquement disponibles en lecture :
 
-Essayez d'inverser la visibilité de notre objet `X` à chaque fois que le joueur rentre en contact avec lui!
+- **Symbole (`symbol`)** : Le caractère représentant l'objet dans la `map`.
+- **Position (`position`)** : Les coordonnées de l'objet dans le jeu.
+
+### Suppression de l'Objet
+
+L'objet peut être supprimé grâce à la méthode `remove()`, ce qui le retire du jeu :
+
+```js
+target.remove();
+```
+
+### Exemple Pratique
+
+Imaginez vouloir rendre un objet `X` invisible ou visible alternativement à chaque collision avec le joueur. Utilisez la propriété `visible` dans une fonction `onCollide` :
+
+```js
+onCollide: function(target) {
+  target.visible = !target.visible;
+}
+```

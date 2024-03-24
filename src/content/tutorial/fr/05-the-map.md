@@ -1,5 +1,5 @@
 ---
-title: La carte
+title: La Carte
 base: |
   createGame({
     player: {
@@ -49,9 +49,13 @@ solution: |
   })
 ---
 
-Pour configure **la carte** il faut définir les `templates`. On peut voir ceux-ci comme les modèles à partir desquels les objets de notre jeux vont être fabriqués.
+La création d'une **carte** est essentielle pour donner vie à votre jeu. Celle-ci se compose de deux éléments principaux : les `templates` et le paramètre `map`.
 
-Imaginons que nous souhaitons créer des murs.
+### Les Templates
+
+Les `templates` sont des modèles qui définissent les éléments réutilisables dans votre jeu, tels que les murs, les ennemis ou les trésors. Vous pouvez les imaginer comme des blocs de construction.
+
+Pour définir un template pour un mur, par exemple :
 
 ```js
 createGame({
@@ -64,9 +68,13 @@ createGame({
 });
 ```
 
-Le charactère `X` peut-être remplacé par n'importe quel charactère. Choisissez celui qui vous semble le mieux correspondre visuellement, car nous allons maintenant dessiner avec!
+Le caractère `X` représente ici un mur et est associé à un sprite spécifique. Vous pouvez utiliser n'importe quel caractère pour représenter différents éléments dans vos templates.
 
-Pour utiliser notre `template`, ça se passe dans le paramètre `map`. Celui-ci ressemble beaucoup aux `sprite`. C'est ici que l'on décrit le monde dans lequel évolue le joueur.
+### Dessiner la Map
+
+La `map` utilise les templates définis précédemment pour créer l'environnement du jeu. Chaque caractère dans la `map` correspond à un template et permet de dessiner la carte.
+
+Voici comment utiliser le template de mur pour dessiner un enclos :
 
 ```js
 createGame({
@@ -84,9 +92,9 @@ createGame({
 });
 ```
 
-- Chaque caractère présent dans `templates` sera interprété comme un objet du jeu.
-- Les nouvelles lignes indiquent le début d'une nouvelle rangée
-- Les espaces blancs, les tabulations et les lignes vides sont ignorés.
-- Tout autre caractère représente une case vide.
+- Chaque caractère présent dans `templates` sera transformé en l'objet correspondant dans le jeu.
+- Les nouvelles lignes marquent le début d'une nouvelle rangée.
+- Les espaces, tabulations et lignes vides sont ignorés.
+- Tout autre caractère est interprété comme un espace vide.
 
-À vous! Ajoutez des objets, agrandissez la map... Bref expérimentez!
+C'est à votre tour maintenant ! Ajoutez des objets, agrandissez la map, expérimentez pour créer un monde riche et intéressant pour votre jeu.

@@ -1,5 +1,5 @@
 ---
-title: Les Sons dans le Jeu
+title: Sound in the Game
 base: |
   createGame({
     player: {
@@ -68,7 +68,7 @@ solution: |
           .5....5.
           ..5555..
         `,
-        sound:createSound("POWERUP")
+        sound: createSound("POWERUP")
       },
     },
     map:`
@@ -85,9 +85,9 @@ solution: |
   })
 ---
 
-Intégrer des effets sonores dans votre jeu peut grandement améliorer l'expérience utilisateur en ajoutant une dimension immersive et interactive. Pour cela, vous devez utiliser le paramètre `sound` en combinaison avec la fonction `createSound`.
+Integrating sound effects into your game can greatly enhance the user experience by adding an immersive and interactive dimension. To do this, you should use the `sound` parameter in combination with the `createSound` function.
 
-La configuration ressemble à ceci :
+The setup looks like this:
 
 ```js
 //...
@@ -100,9 +100,9 @@ La configuration ressemble à ceci :
 //...
 ```
 
-La fonction `createSound` accepte deux paramètres : le type de son et un nombre optionnel qui sert de graine pour la génération du son.
+The `createSound` function accepts two parameters: the sound type and an optional number which serves as a seed for sound generation.
 
-Il y a 9 types de sons disponibles :
+There are 9 sound types available:
 
 - `DEFAULT`
 - `RANDOM`
@@ -114,12 +114,12 @@ Il y a 9 types de sons disponibles :
 - `JUMP`
 - `BLIP`
 
-Si aucun nombre n'est fourni, le son généré sera différent à chaque lancement du jeu. Pour conserver un son spécifique, vous pouvez ajouter un nombre. Chaque nombre générera un son unique.
+If no number is provided, the generated sound will be different each time the game is launched. To keep a specific sound, you can add a number. Each number will generate a unique sound.
 
-Les sons sont générés grâce au superbe outil [jfxr](https://jfxr.frozenfractal.com/).
+Sounds are generated using the excellent tool [jfxr](https://jfxr.frozenfractal.com/).
 
-> [!ASTUCE]
-> Le volume général du jeu peut être ajusté avec le paramètre `volume`, qui accepte une valeur entre 0 et 1.
+> [!TIP]
+> The overall game volume can be adjusted with the `volume` parameter, which accepts a value between 0 and 1.
 >
 > ```js
 > createGame({

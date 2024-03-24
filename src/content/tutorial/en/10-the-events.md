@@ -1,5 +1,5 @@
 ---
-title: Intégration des Événements
+title: Integrating Events
 base: |
   createGame({
     player: {
@@ -87,11 +87,11 @@ solution: |
   })
 ---
 
-Jusqu'à présent, nous avons appris à créer un univers de jeu statique où le joueur peut se déplacer librement. Toutefois, pour dynamiser cet univers et le rendre interactif, il est essentiel d'intégrer des événements qui modifient le jeu lors de certaines actions.
+So far, we've learned to create a static game world where the player can move freely. However, to make this world dynamic and interactive, it's essential to integrate events that modify the game during certain actions.
 
-### Exemple d'Événement
+### Event Example
 
-Pour que les pièces `C` disparaissent lorsqu'elles sont touchées par le joueur, vous pouvez utiliser l'événement `onCollide` :
+To make the coins `C` disappear when touched by the player, you can use the `onCollide` event:
 
 ```js
 createGame({
@@ -108,12 +108,14 @@ createGame({
 });
 ```
 
-Cette fonction se déclenche automatiquement lorsqu'une collision est détectée entre le joueur et l'objet `C`, entraînant la suppression de l'objet du jeu.
+This function is automatically triggered when a collision is detected between the player and the object `C`, leading to the removal of the object from the game.
 
-### Types d'Événements
+### Types of Events
 
-Il existe trois types d'événements principaux que vous pouvez exploiter pour enrichir l'interaction dans votre jeu :
+There are three main types of events you can use to enrich interaction in your game:
 
-- **Collision (`onCollide`)** : Se déclenche lorsqu'une collision entre le joueur et l'objet se produit.
-- **Entrée (`onEnter`)** : Activé quand le joueur pénètre dans une case contenant l'objet.
-- **Sortie (`onLeave`)** : Se produit lorsque le joueur quitte une case contenant l'objet.
+- **Collision (`onCollide`)**: Triggered when a collision between the player and the object occurs.
+- **Entry (`onEnter`)**: Activated when the player enters a cell containing the object.
+- **Exit (`onLeave`)**: Occurs when the player leaves a cell containing the object.
+
+These events open the door to a multitude of interactive possibilities, allowing you to create puzzles, quests, or simply add elements of surprise and exploration to your game. Experiment with these functions to discover new ways to engage players in your game world.

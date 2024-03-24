@@ -1,5 +1,5 @@
 ---
-title: Modification Globale des Modèles
+title: Global Model Modification
 base: |
   const game = createGame({
     player: {
@@ -71,34 +71,34 @@ solution: |
   })
 ---
 
-Utiliser la fonction `setAll` de l'objet `game` permet de modifier simultanément tous les objets partageant le même symbole. Cette fonction nécessite deux paramètres : le symbole des éléments à modifier et un objet représentant les nouveaux paramètres à appliquer.
+Using the `setAll` function provided by the `game` object allows for the simultaneous modification of all objects sharing the same symbol. This function requires two parameters: the symbol of the elements to be modified and an object representing the new parameters to be applied.
 
 ```js
 const game = createGame({
-  // Configuration initiale du jeu
+  // Initial game setup
   templates: {
     X: {
-      // Configuration initiale de X
+      // Initial configuration for X
     },
   },
-  // Autres configurations
+  // Other configurations
 });
 
 game.setAll("X", {
-  dialog: "Bonjour",
+  dialog: "Hello",
   sprite: 6,
 });
 ```
 
 > [!TIP]
-> Vous pouvez également supprimer tous les éléments ayant le même symbole et ensuite créer un nouvel objet à une position spécifique :
+> You can also remove all elements with the same symbol and then create a new object at a specific position:
 >
 > ```js
-> // Supprime tous les "X"
+> // Removes all "X"
 > game.removeAll("X");
 >
-> // Crée un nouveau "X" à la position [3, 5]
+> // Creates a new "X" at position [3, 5]
 > game.addToCell(3, 5, "X");
 > ```
 
-Cette fonctionnalité permet de créer des mécanismes de jeu où les interactions du joueur avec un élément peuvent influencer l'ensemble du niveau, comme changer l'apparence de tous les obstacles similaires lors d'une collision. Expérimentez avec cette capacité pour dynamiser vos niveaux et proposer des puzzles interactifs et évolutifs qui enrichissent l'expérience de jeu.
+This feature enables the creation of game mechanics where the player's interaction with an element can influence the entire level, such as changing the appearance of all similar obstacles upon a collision. Experiment with this capability to energize your levels and offer interactive and evolving puzzles that enrich the gaming experience.

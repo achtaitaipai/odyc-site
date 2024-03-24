@@ -1,5 +1,5 @@
 ---
-title: Modifier une case
+title: Interagir avec les Cases Spécifiques
 base: |
   const game = createGame({
       player: {
@@ -159,21 +159,21 @@ solution: |
   })
 ---
 
-Dans l'exemple ci-contre la clé et la porte disparaissent lorsque le `player` arrive sur leurs cases.
+Dans cet exemple, la clé et la porte disparaissent lorsque le joueur arrive sur leurs cases. Nous souhaitons que, lorsque le joueur "ramasse" la clé, la porte ne soit plus solide, permettant ainsi au joueur de passer.
 
-Nous voudrions que lorsque le `player` "ramasse" la clé, la porte ne soit plus solide.
-
-Vous aurez besoin de la fonction `getCell` fournie par le contexte du jeu. Celle-ci prend en argument deux nombres correspondant à une position, puis retourne l'objet qui se trouve à cette position. Voici comment elle s'utilise :
+Pour réaliser cela, vous pouvez utiliser la fonction `getCell`, accessible via le contexte du jeu. Cette fonction prend deux nombres en arguments, correspondant à une position, et retourne l'objet situé à cette position. Voici comment l'utiliser :
 
 ```js
 const game = createGame({
-  //...
+  // Configuration du jeu
 });
 
+// Rendre un objet invisible à une position spécifique
 game.getCell(3, 4).visible = false;
+// Supprimer un objet à une position spécifique
 game.getCell(6, 6).remove();
 ```
 
-Dans l'exemple ci-dessus, nous rendons invisble l'obet à la position [3, 4] et nous supprimons l'objet à la position [6, 6].
+Dans l'exemple fourni, nous utilisons `getCell` pour rendre la porte (située à la position [5, 4]) non solide après que le joueur ait ramassé la clé. Cela ouvre de nouvelles possibilités pour créer des puzzles et des mécanismes de jeu interactifs, où les actions du joueur peuvent avoir un impact direct sur l'environnement de jeu.
 
-À vous de jouer (la porte est en position [5, 4])
+Expérimentez avec `getCell` pour modifier l'état des cases de manière dynamique, enrichissant ainsi l'expérience de jeu avec des interactions et des défis variés.

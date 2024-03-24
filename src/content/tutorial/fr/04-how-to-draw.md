@@ -25,7 +25,7 @@ solution: |
   })
 ---
 
-Une sprite est représentée comme une chaîne de caractères, chaque ligne correspond à une rangée de pixels. Voici un exemple de sprite:
+Un sprite est représenté par une chaîne de caractères, chaque ligne correspondant à une rangée de pixels. Voici un exemple de sprite :
 
 ```js
  sprite: `
@@ -40,14 +40,14 @@ Une sprite est représentée comme une chaîne de caractères, chaque ligne corr
       `,
 ```
 
-Tous les chiffres sont interprétés comme une couleur (0: noir, 1: blanc...), les espaces, les tabulations et les lignes vides sont ignorées, les autres caractères sont des pixels transparents.
+Chaque chiffre est interprété comme une couleur (0 : noir, 1 : blanc...), tandis que les espaces, les tabulations et les lignes vides sont ignorés. Les autres caractères représentent des pixels transparents.
 
-Dans l'exemple le caractère `.` est utilisé pour marquer les espaces vides, mais ça pourrait tout aussi bien être un `_`.
+Dans l'exemple, le caractère `.` est utilisé pour marquer les espaces vides, mais cela pourrait tout aussi bien être un tiret bas `_`.
 
 > [!WARNING]
-> En javascript pour créer une chaîne de caractère sur plusieurs lignes on utilise le caractère accent grave : `
+> En JavaScript, pour créer une chaîne de caractères sur plusieurs lignes, on utilise le caractère accent grave : `
 >
 > - Sur Windows : <kbd>AltGr</kbd> + <kbd>7</kbd> puis <kbd>Espace</kbd>
 > - Sur Mac : <kbd>£</kbd> puis <kbd>Espace</kbd>
 
-Essayez de donner dessiner une sprite pour le player.
+Essayez de dessiner un sprite pour le joueur.

@@ -1,5 +1,5 @@
 ---
-title: La Caméra
+title: Camera Control
 base: |
   createGame({
     player: {
@@ -20,7 +20,7 @@ base: |
         sprite: 0,
       },
       E: {
-        end: "Bravo"
+        end: "Well done"
       }
     },
     map: `
@@ -70,7 +70,7 @@ solution: |
         sprite: 0,
       },
       E: {
-        end: "Bravo"
+        end: "Well done"
       }
     },
     map: `
@@ -106,11 +106,11 @@ solution: |
   })
 ---
 
-La gestion de la caméra est un aspect crucial pour offrir une expérience de jeu immersive et agréable. En ajustant la vue de la caméra, vous pouvez contrôler comment et ce que le joueur voit à l'écran, ce qui influence directement sa perception et son interaction avec le jeu.
+Camera management is crucial for providing an immersive and enjoyable gaming experience. By adjusting the camera view, you control how and what the player sees on the screen, directly influencing their perception and interaction with the game.
 
-### Taille de l'Écran
+### Screen Size
 
-La taille de l'écran détermine la portion du monde du jeu visible pour le joueur. Pour la modifier, utilisez les paramètres `screenWidth` et `screenHeight` :
+The screen size determines the portion of the game world visible to the player. To modify it, use the `screenWidth` and `screenHeight` parameters:
 
 ```js
 createGame({
@@ -120,11 +120,11 @@ createGame({
 });
 ```
 
-Ces ajustements vous permettent d'élargir ou de réduire la vue selon les objectifs de gameplay.
+These adjustments allow you to widen or narrow the view based on gameplay objectives.
 
-### Suivi de la Caméra
+### Camera Tracking
 
-Pour un suivi fluide du joueur, définissez un rectangle central invisible autour duquel la caméra s'ajustera automatiquement. Si le joueur se déplace en dehors de ce rectangle, la caméra se repositionnera pour le garder en vue :
+For smooth player tracking, define an invisible central rectangle around which the camera will automatically adjust. If the player moves outside this rectangle, the camera will reposition to keep them in view:
 
 ```js
 createGame({
@@ -135,6 +135,6 @@ createGame({
 ```
 
 > [!NOTE]
-> Bien que l'ajustement de ces paramètres puisse sembler complexe au premier abord, expérimenter avec différentes valeurs est essentiel pour trouver l'équilibre parfait pour votre jeu. Ils constituent un outil puissant pour façonner l'expérience du joueur.
+> While adjusting these parameters might seem complex at first, experimenting with different values is crucial to finding the perfect balance for your game. They are a powerful tool for shaping the player's experience.
 
-En affinant la gestion de la caméra et la vue de l'écran, vous créez un espace de jeu qui soutient et enrichit la narration, les défis et l'immersion dans votre univers ludique.
+By refining camera management and screen view, you create a gameplay space that supports and enriches the narrative, challenges, and immersion in your game world.

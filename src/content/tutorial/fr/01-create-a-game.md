@@ -1,26 +1,32 @@
 ---
-title: Créer un jeu
+title: Commencer avec OdyCJS
 base: |
-  //Supprimez cette ligne et écrivez votre code ici.
+  // Bienvenue dans OdyCJS! Supprimez cette ligne et commencez par créer votre premier jeu avec OdyCJS.
 solution: |
-  createGame()
+  createGame();
 ---
 
-Bienvenue dans le tutoriel! Ici vous apprendrez tout le nécessaire pour créer des jeux avec cette librairie.
+Bienvenue dans le tutoriel OdyCJS ! Ce guide est conçu pour vous enseigner comment utiliser OdyC, une bibliothèque JavaScript pour créer des jeux narratifs. Que vous soyez débutant en programmation ou développeur expérimenté, OdyCJS offre les outils nécessaires pour transformer vos idées en jeux interactifs.
 
-Le tutoriel est divisé en plusieurs sections. Chaque section contient un petit exercice conçu pour illustrer un élément de la librairie.
+Le tutoriel est divisé en sections, chacune se concentrant sur une fonctionnalité clé. Vous apprendrez pas à pas à construire un jeu, de la mise en place de votre projet jusqu'à l'ajout de complexité à votre création.
 
 > [!NOTE]
-> Ce tutoriel se veut le plus exhaustif possible, mais il n'est pas nécessaire de tout connaître de la librairie pour créer un jeu. Vous pouvez tout à fait apprendre les bases, commencer un jeu et revenir au tutoriel lorsque vous en ressentez le besoin.
+> Ce tutoriel vise à couvrir les aspects essentiels d'OdyC. Toutefois, il n'est pas nécessaire de maîtriser chaque détail pour commencer à créer votre propre jeu. N'hésitez pas à expérimenter par vous-même et à revenir au tutoriel pour approfondir vos connaissances lorsque vous en ressentez le besoin.
 
-## Créer un jeu
+## Créer un jeu avec `createGame()`
 
-Pour créer un jeu vous devrez utilisé la fonction nommée `createGame`.
+La première étape pour créer un jeu avec OdyCJS est d'utiliser la fonction `createGame()`. Cette fonction initialise votre jeu, en créant un nouveau projet prêt à être personnalisé avec vos propres scénarios, personnages, et logiques de jeu.
 
-Votre code devrait ressembler à ceci:
+Voici à quoi doit ressembler votre code:
 
 ```js
 createGame();
 ```
 
-Lorsque vous aurez réussi vous verrez le résultat de votre travail s'afficher dans la fenêtre du bas. Pour jouer, vous devez cliquer sur le jeu puis utiliser les flêches directionelles et la touche Entrée.
+Cette simple ligne de code est le point de départ de tous les jeux créés avec OdyCJS. Elle prépare le terrain pour l'ajout d'éléments de jeu, tels que des scènes, des dialogues et des interactions.
+
+### Exercice
+
+Votre mission, si vous l'acceptez, est d'initialiser votre premier jeu en utilisant `createGame()`. Écrivez le code nécessaire dans le playground ci-dessous et observez comment OdyCJS prépare l'environnement de votre jeu. Si tout est correct, vous verrez apparaître un cadre de jeu de base, prêt à être enrichi.
+
+N'oubliez pas : le développement de jeux est une aventure créative. N'hésitez pas à expérimenter et à jouer avec le code pour voir ce que vous pouvez créer !

@@ -1,5 +1,5 @@
 ---
-title: Les dialogues
+title: Les Dialogues
 base: |
   createGame({
     player: {
@@ -84,11 +84,9 @@ solution: |
   })
 ---
 
-Pour pouvoir rajouter un peu de narration dans notre jeu, nous pouvons ajouter des dialogues.
+Ajouter des dialogues à votre jeu peut considérablement enrichir la narration et l'interactivité. En configurant la propriété `dialog` pour chaque template, vous pouvez introduire des conversations, des indices ou des éléments d'histoire.
 
-Pour cela vous pouvez paramètrer le `dialog` de chaque template.
-
-Si le paramètre `dialog` est renseigné pour un template, une boîte de dialogue s'ouvrira lorsque le `player` interagit avec lui.
+Lorsqu'un paramètre `dialog` est défini pour un template, une boîte de dialogue s'ouvre lorsque le `player` interagit avec lui. Cela permet une narration dynamique et engage le joueur.
 
 ```js
 //...

@@ -1,33 +1,34 @@
 ---
-title: Nommer son jeu
+title: Nommer Votre Jeu
 base: |
   createGame()
 solution: |
   createGame({
-      title: "Un jeu",
+      title: "Mon Jeu",
       background: 3,
   })
 ---
 
-Nous allons commencer à personnaliser le jeu.
-Pour celà nous allons ajouter une couleur de fond et un titre à notre jeu.
+Il est temps de commencer à personnaliser votre jeu. Pour cela, nous allons ajouter une couleur de fond et un titre.
 
-Pour pouvoir ajouter des paramètres vous devez décrire à la fonction `createGame` à quoi ressemble le jeu quevous souhaitez créer.
+Pour ajouter des paramètres, vous devez informer la fonction `createGame` de l'apparence souhaitée pour votre jeu.
 
-Voici à quoi ça va ressembler
+Voici un exemple :
 
 ```js
 createGame({
-  title: "Un jeu",
+  title: "Mon Jeu",
   background: 3,
 });
 ```
 
 > [!NOTE]
-> À chaque fois que vous modifier le code, le jeu se relance du début.
-> Lorsqu'un paramètre `title` est renseigné. Il faut d'abord appuyer sur espace ou entrée pour passer l'écran de titre.
+> Chaque fois que vous modifiez le code, le jeu redémarre depuis le début.
+> Lorsqu'un paramètre `title` est spécifié, vous devez appuyer sur la touche espace ou entrée pour passer l'écran du titre.
 
-Pour la propriété `background` vous pouvez préciser n'importe quel nombre entre 0 et 9. Chacun correspond à une couleur, si la palette de base ne vous plait pas vous verrez plus tard que vous pouvez définir vos propres couleurs.
+Pour la propriété `background`, vous pouvez spécifier n'importe quel nombre entre 0 et 9. Chaque numéro correspond à une couleur différente. Si la palette par défaut ne vous convient pas, vous apprendrez plus tard comment définir vos propres couleurs.
+
+Raccourcis clavier pour ajouter des accolades :
 
 Sur Mac :
 
