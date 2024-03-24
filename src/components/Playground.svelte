@@ -8,6 +8,7 @@
   import { languages, ui } from "../lib/i18n/ui.ts";
   import { useTranslations } from "../lib/i18n/utils";
   import Button from "./Button.svelte";
+  import { espresso } from "thememirror";
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);
   let currentCode = "";
@@ -62,7 +63,8 @@
   >
     <Editor
       lang={javascript()}
-      class=" overflow-auto w-full h-full border-b lg:border-r lg:border-b-0 row-start-1"
+      class=" overflow-auto w-full h-full border-b lg:border-r lg:border-b-0 row-start-1 bg-white"
+      theme={espresso}
       on:change={handleChange}
       bind:value={currentCode}
     />

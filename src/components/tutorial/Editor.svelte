@@ -2,6 +2,7 @@
   import { javascript } from "@codemirror/lang-javascript";
   import Editor from "svelte-codemirror-editor";
   import { updateIframe } from "../../lib/processCode.ts";
+  import { espresso } from "thememirror";
 
   export let code = "";
   let iframe: HTMLIFrameElement;
@@ -18,7 +19,8 @@
 >
   <Editor
     lang={javascript()}
-    class=" overflow-auto w-full h-full border-b row-start-1"
+    class=" overflow-auto w-full h-full border-b row-start-1 bg-white"
+    theme={espresso}
     on:change={handleChange}
     bind:value={code}
   />
