@@ -53,7 +53,7 @@ solution: |
           sprite: bnm,
           onCollide: async function(){
             await game.openDialog("You asked for it! Now face the consequences.")
-            await game.playSound(createSound("EXPLOSION"))
+            await game.playSound("EXPLOSION")
             game.end("Game Over")
           }
         }
@@ -90,7 +90,7 @@ onCollide: async function(){
   await game.openDialog("Beware! A great battle looms.")
 
   // Sound effect to increase intensity
-  await game.playSound(createSound("DRUMROLL"))
+  await game.playSound("POWERUP")
 
   // Final dialogue before the conclusion
   await game.openDialog("The time has come! Prepare for the showdown.")
