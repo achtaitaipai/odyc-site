@@ -118,7 +118,7 @@ Si aucun nombre n'est fourni, le son généré sera différent à chaque lanceme
 
 Les sons sont générés grâce au superbe outil [jfxr](https://jfxr.frozenfractal.com/).
 
-> [!ASTUCE]
+> [!TIP]
 > Le volume général du jeu peut être ajusté avec le paramètre `volume`, qui accepte une valeur entre 0 et 1.
 >
 > ```js
