@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
-import ghAlerts from "remark-gh-alerts";
-
 import tailwind from "@astrojs/tailwind";
+import ghAlerts from "remark-gh-alerts";
+import { transformerNotationDiff } from "@shikijs/transformers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +11,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "github-light",
+      transformers: [transformerNotationDiff()],
     },
     remarkPlugins: [ghAlerts],
   },
