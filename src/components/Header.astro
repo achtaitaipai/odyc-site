@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="bg-violet-900 text-gray-50 border-b flex h-[var(--header-height)] items-center"
+  class="bg-white border-b text-gray-900 flex h-[var(--header-height)] items-center"
 >
   <div class="container mx-auto gap-6 flex items-center">
     <a href="/">
@@ -40,8 +40,18 @@ const t = useTranslations(lang);
 
     <nav class="me-auto">
       <ul class="flex gap-8">
-        <li><a href={`/${lang}/tutorial`}>{t("nav.tutorial")}</a></li>
-        <li><a href={`/${lang}/playground`}>{t("nav.playground")}</a></li>
+        <li>
+          <a
+            href={`/${lang}/tutorial`}
+            class="hover:underline underline-offset-4">{t("nav.tutorial")}</a
+          >
+        </li>
+        <li>
+          <a
+            href={`/${lang}/playground`}
+            class="hover:underline underline-offset-4">{t("nav.playground")}</a
+          >
+        </li>
       </ul>
     </nav>
     <Dropdown client:idle>
