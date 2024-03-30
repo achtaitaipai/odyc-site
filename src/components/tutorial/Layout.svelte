@@ -43,5 +43,5 @@
       </nav>
     </div>
   </div>
-  <Editor bind:code={currentCode} />
+  <Editor bind:code={currentCode} {lang} />
 </main>

@@ -15,7 +15,7 @@
   let iframe: HTMLIFrameElement;
   let inputFile: HTMLInputElement;
 
-  $: iframe && updateIframe(currentCode, iframe);
+  $: iframe && updateIframe(currentCode, iframe, lang);
 
   onMount(() => {
     if (localStorage) {
@@ -26,13 +26,15 @@
   });
 
   const handleChange = () => {
-    updateIframe(currentCode, iframe);
+    updateIframe(currentCode, iframe, lang);
     localStorage.setItem("playground-code", currentCode);
   };
 
   const downloadFile = () => {
     const downloadLink = document.createElement("a");
-    const encodedContent = encodeURIComponent(prepareCode(currentCode, false));
+    const encodedContent = encodeURIComponent(
+      prepareCode(currentCode, lang, false)
+    );
     downloadLink.setAttribute(
       "href",
       "data:text/html;charset=utf-8," + encodedContent

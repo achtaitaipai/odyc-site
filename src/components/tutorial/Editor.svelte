@@ -5,12 +5,13 @@
   import { espresso } from "thememirror";
 
   export let code = "";
+  export let lang: string;
   let iframe: HTMLIFrameElement;
 
-  $: iframe && updateIframe(code, iframe);
+  $: iframe && updateIframe(code, iframe, lang);
 
   const handleChange = () => {
-    updateIframe(code, iframe);
+    updateIframe(code, iframe, lang);
   };
 </script>
 

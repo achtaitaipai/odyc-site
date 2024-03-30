@@ -1,8 +1,13 @@
 import odyc from "odyc/dist/index.global.js?raw";
 import handleErrorScript from "./handleError.js?raw";
-export const prepareCode = (code: string, debug = true) => /* html */ `
-<html>
+export const prepareCode = (
+  code: string,
+  lang: string,
+  debug = true
+) => /* html */ `
+<html lang="${lang}">
 <head>
+<meta charset="utf-8" />
 ${
   debug
     ? `
@@ -41,7 +46,11 @@ export const parseCode = (code: string) => {
   );
 };
 
-export function updateIframe(code: string, iframe: HTMLIFrameElement): void {
-  const source = prepareCode(code);
+export function updateIframe(
+  code: string,
+  iframe: HTMLIFrameElement,
+  lang: string
+): void {
+  const source = prepareCode(code, lang);
   iframe.srcdoc = source;
 }
