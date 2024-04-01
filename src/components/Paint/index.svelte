@@ -7,6 +7,7 @@
     getMousePos,
     gridToString,
     initGrid,
+    resizeGrid,
     setGrid,
     stringToGrid,
   } from "./utils.ts";
@@ -55,6 +56,7 @@
   const handleChangeWidth = async (e: Event) => {
     const target = e.target as HTMLInputElement;
     spriteWidth = target.valueAsNumber;
+    grid = resizeGrid(grid, spriteWidth, spriteHeight);
     await tick();
     if (ctx) drawGrid(grid, target.valueAsNumber, spriteHeight, ctx);
   };
@@ -62,6 +64,7 @@
   const handleChangeHeight = async (e: Event) => {
     const target = e.target as HTMLInputElement;
     spriteHeight = target.valueAsNumber;
+    grid = resizeGrid(grid, spriteHeight, spriteHeight);
     await tick();
     if (ctx) drawGrid(grid, spriteWidth, target.valueAsNumber, ctx);
   };

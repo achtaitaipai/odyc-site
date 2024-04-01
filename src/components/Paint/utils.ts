@@ -73,6 +73,17 @@ export const getMousePos = (
   return [x, y];
 };
 
+export const resizeGrid = (grid: number[][], width: number, height: number) => {
+  const newGrid = initGrid(width, height);
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const c = grid[y]?.[x];
+      if (c !== undefined) newGrid[y][x] = c;
+    }
+  }
+  return newGrid;
+};
+
 export const gridToString = (
   grid: number[][],
   width: number,
