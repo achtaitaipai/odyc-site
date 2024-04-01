@@ -1,11 +1,10 @@
 ---
-import Dropdown from "../../../components/Dropdown.svelte";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import Header from "../../../components/Header.astro";
+import Dropdown from "../../../components/Dropdown.svelte";
+import TutorialLayout from "../../../components/tutorial/Layout.svelte";
 import Base from "../../../layouts/Base.astro";
 import { languages } from "../../../lib/i18n/ui";
-import TutorialLayout from "../../../components/tutorial/Layout.svelte";
 import { useTranslations } from "../../../lib/i18n/utils.ts";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -39,7 +38,7 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
 });
 ---
 
-<Base>
+<Base title={`${t("nav.tutorial")} • ${title}`}>
   <TutorialLayout {lang} baseCode={base} solutionCode={solution} client:idle>
     <div slot="header" class="px-4">
       <Dropdown client:idle>

@@ -4,6 +4,13 @@ import "remark-gh-alerts/styles/github-base.css";
 import { getLangFromUrl } from "../lib/i18n/utils.ts";
 import Header from "../components/Header.astro";
 
+export type Props = {
+  title?: string;
+};
+
+const { title } = await Astro.props;
+const pageTitle = title ? `Odyc-js • ${title}` : "odyC-js";
+
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -13,7 +20,7 @@ const lang = getLangFromUrl(Astro.url);
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body class="bg-gray-50 color-gray-900">
     <Header />
