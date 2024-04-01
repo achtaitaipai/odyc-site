@@ -1,6 +1,7 @@
 <script lang="ts" type="module">
   import { javascript } from "@codemirror/lang-javascript";
   import Editor from "svelte-codemirror-editor";
+  import { editorConfig } from "../../lib/editorConfig.ts";
   import { updateIframe } from "../../lib/processCode.ts";
   import { espresso } from "thememirror";
 
@@ -19,9 +20,8 @@
   class="grid sm:grid-rows-2 grow h-svh sm:h-[calc(100svh_-_var(--header-height))] sm:col-span-3"
 >
   <Editor
-    lang={javascript()}
+    {...editorConfig}
     class=" overflow-auto w-full h-full border-b row-start-1 bg-white"
-    theme={espresso}
     on:change={handleChange}
     bind:value={code}
   />

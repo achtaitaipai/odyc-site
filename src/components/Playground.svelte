@@ -1,14 +1,14 @@
 <script lang="ts" type="module">
+  import { onMount } from "svelte";
+  import Editor from "svelte-codemirror-editor";
+  import { editorConfig } from "../lib/editorConfig.ts";
+  import { languages } from "../lib/i18n/ui.ts";
+  import { useTranslations } from "../lib/i18n/utils";
+  import { parseCode, prepareCode, updateIframe } from "../lib/processCode.ts";
+  import Button from "./Button.svelte";
   import Paint from "./Paint/index.svelte";
   import Sound from "./Sound/index.svelte";
-  import Editor from "svelte-codemirror-editor";
-  import { parseCode, prepareCode, updateIframe } from "../lib/processCode.ts";
-  import { javascript } from "@codemirror/lang-javascript";
-  import { onMount } from "svelte";
-  import { languages, ui } from "../lib/i18n/ui.ts";
-  import { useTranslations } from "../lib/i18n/utils";
-  import Button from "./Button.svelte";
-  import { espresso } from "thememirror";
+
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);
   let currentCode = "";
@@ -64,9 +64,8 @@
     class="grid grid-rows-2 grow h-[calc(100svh_-_var(--header-height)-_var(--footer-height))] lg:grid-cols-2 lg:grid-rows-1"
   >
     <Editor
-      lang={javascript()}
+      {...editorConfig}
       class=" overflow-auto w-full h-full border-b lg:border-r lg:border-b-0 row-start-1 bg-white"
-      theme={espresso}
       on:change={handleChange}
       bind:value={currentCode}
     />
