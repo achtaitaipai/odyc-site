@@ -27,7 +27,7 @@
 
   let seed = 0;
 
-  let currentTemplate: FxKey = "DEFAULT";
+  let currentTemplate: FxKey = "RANDOM";
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.code === "Escape") isOpen = false;

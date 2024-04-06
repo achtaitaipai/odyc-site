@@ -40,7 +40,7 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
 
 <Base title={`${t("nav.tutorial")} • ${title}`}>
   <TutorialLayout {lang} baseCode={base} solutionCode={solution} client:idle>
-    <div slot="header" class="px-4">
+    <div slot="header" class="px-2">
       <Dropdown client:idle>
         <h1 class="text-lg font-semibold" slot="current">{title}</h1>
         <ul
@@ -66,7 +66,11 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
       {
         url.prev && (
           <li>
-            <a href={url.prev} title={t("pagination.previous")}>
+            <a
+              href={url.prev}
+              title={t("pagination.previous")}
+              class="flex items-center"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -81,6 +85,7 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
                   d="M15.75 19.5 8.25 12l7.5-7.5"
                 />
               </svg>
+              <span>{t("pagination.previous")}</span>
             </a>
           </li>
         )
@@ -88,8 +93,13 @@ const tutorials = (await getCollection("tutorial")).filter((el) => {
 
       {
         url.next && (
-          <li class="col-start-2">
-            <a href={url.next} title={t("pagination.next")}>
+          <li class="col-start-2 justify-self-end">
+            <a
+              href={url.next}
+              title={t("pagination.next")}
+              class="flex items-center"
+            >
+              <span>{t("pagination.next")}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -78,7 +78,7 @@
     ></iframe>
   </div>
   <div class=" bg-white shadow col-span-2 h-[var(--footer-height)] px-4">
-    <div class="container mx-auto flex items-center gap-4 h-full">
+    <div class="px-4 flex items-center gap-4 h-full">
       <Paint {lang}>{t("paint")}</Paint>
       <Sound {lang}>{t("sound")}</Sound>
       <span class="grow" aria-hidden="true"></span>

@@ -9,10 +9,10 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="bg-white border-b text-gray-900 flex h-[var(--header-height)] items-center"
+  class="bg-white text-gray-900 flex h-[var(--header-height)] items-center"
 >
-  <div class="container mx-auto gap-6 flex items-center">
-    <a href="/" class="logo">
+  <div class="px-4 gap-6 flex items-center w-full">
+    <a href="/" class="logo flex items-center gap-2">
       <svg viewBox="0 0 8 8"
         ><rect x="0" y="0" width="1" height="1" fill="#f06595"></rect><rect
           x="1"
@@ -327,9 +327,10 @@ const t = useTranslations(lang);
           fill="#40c057"></rect></svg
       >
       <span class="sr-only">Logo</span>
+      <span class="font-bold text-xl">OdycJs</span>
     </a>
 
-    <nav class="me-auto">
+    <nav class="ml-auto">
       <ul class="flex gap-8">
         <li>
           <a
@@ -372,9 +373,7 @@ const t = useTranslations(lang);
   :root {
     --header-height: 3.5rem;
   }
-  .logo {
-    & > svg {
-      height: 3rem;
-    }
+  .logo svg {
+    height: 2.5rem;
   }
 </style>

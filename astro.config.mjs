@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [svelte(), tailwind()],
   markdown: {
     shikiConfig: {
-      theme: "github-light",
+      theme: "github-dark",
       transformers: [transformerNotationDiff()],
     },
     remarkPlugins: [ghAlerts],

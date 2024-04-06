@@ -23,10 +23,10 @@
   <div
     class="flex flex-col sm:col-span-2 h-[calc(100svh_-_var(--header-height))] border-r"
   >
-    <div class="shrink-0 bg-white items-center shadow-sm">
+    <div class="shrink-0 bg-blue-100 items-center shadow-sm">
       <slot name="header" />
     </div>
-    <div class="prose grow overflow-auto h-full px-4 py-4">
+    <div class="prose grow overflow-auto h-full px-4 pb-4">
       <slot />
     </div>
     <div class="flex h-16 items-center bg-white px-4 shadow">
