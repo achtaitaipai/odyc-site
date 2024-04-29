@@ -1,0 +1,40 @@
+---
+import { languages } from "../../../lib/i18n/ui";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import Navigation from "../../../components/doc/Navigation.astro";
+export const getStaticPaths = (async () => {
+  const allDoc = await getCollection("documentation");
+  return allDoc.map((el) => {
+    const [currentLang, filename] = el.slug.split("/");
+    const slug = filename.replace(/\d+-/, "");
+    return {
+      params: {
+        lang: currentLang,
+        slug,
+      },
+      props: {
+        ...el,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { data, render } = await Astro.props;
+const { title } = data;
+const lang = Astro.params.lang as keyof typeof languages;
+
+const { Content } = await render();
+---
+
+<Base title={title}>
+  <div class="flex">
+    <Navigation lang={lang} />
+    <main class="w-full" data-pagefind-body>
+      <div class="prose mx-auto py-8">
+        <Content />
+      </div>
+    </main>
+  </div>
+</Base>

@@ -89,7 +89,7 @@
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <!-- svelte-ignore a11y-positive-tabindex -->
     <dialog
-      class="border-gray-800 shadow border-2 rounded p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
+      class="border p-4 w-80 bg-white bottom-full left-full absolute z-50 flex flex-col"
       transition:fade
       on:keydown={handleKeyDown}
     >

@@ -9,6 +9,7 @@ export const ui = {
   en: {
     "nav.tutorial": "Tutorial",
     "nav.playground": "Playground",
+    "nav.documentation": "Documentation",
     "playground.download": "Download",
     "playground.open": "Open",
     "tutorial.solve": "Solve",
@@ -26,6 +27,7 @@ export const ui = {
   fr: {
     "nav.tutorial": "Tutoriel",
     "nav.playground": "Éditeur",
+    "nav.documentation": "Documentation",
     "playground.download": "Télécharger",
     "playground.open": "Ouvrir",
     "tutorial.solve": "Résoudre",

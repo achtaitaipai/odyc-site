@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="bg-white text-gray-900 flex h-[var(--header-height)] items-center"
+  class="bg-gray-50 text-gray-900 flex h-[var(--header-height)] items-center sticky top-0 z-10 border-b"
 >
   <div class="px-4 gap-6 flex items-center w-full">
     <a href="/" class="logo flex items-center gap-2">
@@ -332,6 +332,13 @@ const t = useTranslations(lang);
 
     <nav class="ml-auto">
       <ul class="flex gap-8">
+        <li>
+          <a
+            href={`/${lang}/documentation/overview`}
+            class="hover:underline underline-offset-4"
+            >{t("nav.documentation")}</a
+          >
+        </li>
         <li>
           <a
             href={`/${lang}/tutorial`}

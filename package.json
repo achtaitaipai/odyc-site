@@ -16,7 +16,7 @@
     "@codemirror/lang-javascript": "^6.2.2",
     "astro": "^4.5.5",
     "jfxr": "^0.13.0",
-    "odyc": "^0.0.17",
+    "odyc": "^0.0.19",
     "open-color": "^1.9.1",
     "remark-gh-alerts": "^0.0.3",
     "svelte": "^4.2.12",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@shikijs/transformers": "^1.2.1",
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "pagefind": "^1.1.0"
   }
 }

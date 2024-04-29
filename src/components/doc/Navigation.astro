@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import Search from "./Search.svelte";
+
+export type Props = {
+  lang: string;
+};
+
+const { lang } = await Astro.props;
+const items = (await getCollection("documentation"))
+  .filter((el) => {
+    const [currentLang] = el.slug.split("/");
+    return currentLang === lang;
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug, "en", { numeric: true }));
+
+const formatSlug = (fileName: string) => {
+  const [_, slug] = fileName.split("/");
+  return slug.replace(/\d+-/, "");
+};
+
+const { href } = Astro.url;
+
+const currentSection = href.split("/").at(-1);
+---
+
+<nav
+  class="w-72 py-4 px-4 fixed h-[calc(100svh_-_var(--header-height))] overflow-auto border-r"
+>
+  <ul class="space-y-4">
+    {
+      items.map((el) => (
+        <li>
+          <a
+            href={`/${lang}/documentation/${formatSlug(el.slug)}`}
+            class="text-lg hover:underline underline-offset-4"
+            class:list={[
+              formatSlug(el.slug) === currentSection &&
+                "text-blue-800 underline",
+            ]}
+          >
+            {el.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <Search client:only />
+</nav>
