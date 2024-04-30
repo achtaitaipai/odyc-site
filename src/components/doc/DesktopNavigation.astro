@@ -1,31 +1,23 @@
 ---
-import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Search from "./Search.svelte";
 
 export type Props = {
   lang: string;
+  items: CollectionEntry<"documentation">[];
+  currentSection: string;
 };
 
-const { lang } = await Astro.props;
-const items = (await getCollection("documentation"))
-  .filter((el) => {
-    const [currentLang] = el.slug.split("/");
-    return currentLang === lang;
-  })
-  .sort((a, b) => a.slug.localeCompare(b.slug, "en", { numeric: true }));
+const { lang, items, currentSection } = await Astro.props;
 
 const formatSlug = (fileName: string) => {
   const [_, slug] = fileName.split("/");
   return slug.replace(/\d+-/, "");
 };
-
-const { href } = Astro.url;
-
-const currentSection = href.split("/").at(-1);
 ---
 
 <nav
-  class="w-72 py-4 px-4 fixed h-[calc(100svh_-_var(--header-height))] overflow-auto border-r"
+  class="hidden xl:block fixed w-72 py-4 px-4 h-[calc(100svh_-_var(--header-height))] overflow-auto border-r"
 >
   <ul class="space-y-4">
     {
@@ -45,5 +37,7 @@ const currentSection = href.split("/").at(-1);
       ))
     }
   </ul>
-  <Search client:only />
+  <div class="text-lg mt-6">
+    <Search client:only />
+  </div>
 </nav>

@@ -1,5 +1,5 @@
 ---
-title: L'objet game
+title: L'Objet Game
 ---
 
 # L'objet game

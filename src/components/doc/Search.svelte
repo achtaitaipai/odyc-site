@@ -27,7 +27,7 @@
   };
 </script>
 
-<button class="text-lg mt-6 flex items-center gap-1" on:click={open}>
+<button class=" flex items-center gap-1" on:click={open}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

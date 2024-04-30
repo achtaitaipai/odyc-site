@@ -3,7 +3,8 @@ import { languages } from "../../../lib/i18n/ui";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Base from "../../../layouts/Base.astro";
-import Navigation from "../../../components/doc/Navigation.astro";
+import DesktopNavigation from "../../../components/doc/DesktopNavigation.astro";
+import MobileNavigation from "../../../components/doc/MobileNavigation.svelte";
 export const getStaticPaths = (async () => {
   const allDoc = await getCollection("documentation");
   return allDoc.map((el) => {
@@ -25,13 +26,34 @@ const { data, render } = await Astro.props;
 const { title } = data;
 const lang = Astro.params.lang as keyof typeof languages;
 
+const navItems = (await getCollection("documentation"))
+  .filter((el) => {
+    const [currentLang] = el.slug.split("/");
+    return currentLang === lang;
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug, "en", { numeric: true }));
+
 const { Content } = await render();
+
+const { href } = Astro.url;
+
+const currentSection = href.split("/").at(-1) ?? "";
 ---
 
 <Base title={title}>
+  <MobileNavigation
+    items={navItems}
+    lang={lang}
+    currentSection={currentSection}
+    client:idle
+  />
   <div class="flex">
-    <Navigation lang={lang} />
-    <main class="w-full" data-pagefind-body>
+    <DesktopNavigation
+      lang={lang}
+      items={navItems}
+      currentSection={currentSection}
+    />
+    <main class="w-full px-4" data-pagefind-body>
       <div class="prose mx-auto py-8">
         <Content />
       </div>
