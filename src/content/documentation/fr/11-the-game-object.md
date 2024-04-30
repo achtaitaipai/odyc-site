@@ -1,40 +1,38 @@
 ---
-title: L'objet jeu
+title: L'objet game
 ---
 
-# Modifier la carte
+# L'objet game
 
 ## Modifier une case
 
 ### getCell
 
-Pour obtenir des informations ou modifier un élément dont vous connaissez la position. Vous pouvez utiliser la méthode `getCell` retournée par `createGame`.
+Cette méthode permet d'obtenir ou de modifier un élément dont vous connaissez la position. Utilisez `getCell`, retournée par `createGame`, en spécifiant les coordonnées `x` et `y`.
 
 ```js
 const game = createGame();
 game.getCell(2, 0).visible = false;
 ```
 
-La méthode `getCell` prend en argument les coordonnées `x` et `y` de la case et retourne un objet dont les propriétés sont les suivantes.
+La méthode `getCell` accepte les coordonnées `x` et `y` de la case et retourne un objet avec les propriétés suivantes :
 
-- readonly **symbol**: string | null
-- **sprite**: Tile | null
-- **solid**: boolean
-- **sound**: string | null
-- **readonly** position: [number, number]
-- **dialog**: string | null
-- **visible**: boolean
-- **end**: string | null
-- **remove**: () => void
+- **readonly** `symbol`: string | null
+- `sprite`: Tile | null
+- `solid`: boolean
+- `sound`: string | null
+- **readonly** `position`: [number, number]
+- `dialog`: string | null
+- `visible`: boolean
+- `end`: string | null
+- `remove`: () => void
 
 ### setCell
 
-La méthode `setCell` vous permet de modifier un élément dont vous connaissez les coordonnées. Elle prend en arguments les coordonnées `x` et `y` suivies d'un objet contenant les propriétés que vous voulez modifier.
+Utilisez `setCell` pour modifier une case en connaissant ses coordonnées. Cette méthode prend les coordonnées `x` et `y`, suivies d'un objet contenant les propriétés à modifier.
 
 ```js
-const game = createGame({
-  //...
-});
+const game = createGame();
 game.setCell(3, 4, {
   visible: false,
   dialog: "Bonjour",
@@ -43,17 +41,10 @@ game.setCell(3, 4, {
 
 ## Modifier plusieurs éléments
 
-Pour modifer tous les éléments ayant le même symbole, vous pouvez utiliser la méthode `setAll`. Cette méthode prend en arguments le symbole des éléments suivi d'un objet contenant les propriétés que vous voulez modifier.
+Utilisez `setAll` pour modifier tous les éléments ayant le même symbole. Cette méthode prend le symbole des éléments et un objet contenant les propriétés à modifier.
 
 ```js
-const game = createGame({
-  //...
-  templates: {
-    "#": {
-      //...
-    },
-  },
-});
+const game = createGame();
 game.setAll("#", {
   visible: false,
 });
@@ -61,13 +52,41 @@ game.setAll("#", {
 
 ## Ajouter un élément sur une case
 
-La méthode `addToCell` Vous permet d'ajouter un élément (préalablement défini dans les templates) à une position donnée
+`addToCell` permet d'ajouter un élément, défini dans les templates, à une position spécifique.
 
 ```js
 const game = createGame();
 game.addToCell(3, 2, "#");
 ```
 
-Cette méthode prend en argument les coordonnées `x` et `y` de la case et le symbole du template.
+Cette méthode requiert les coordonnées `x` et `y` de la case, ainsi que le symbole du template.
+
+## Connaître les dimensions du monde
+
+Pour obtenir les dimensions du monde, utilisez les propriétés `width` et `height`, qui sont en lecture seule.
+
+```js
+const game = createGame();
+alert(`largeur: ${game.width}, hauteur: ${game.height}`);
+```
 
 ## Charger une carte
+
+Pour charger une nouvelle carte, utilisez `loadMap`. Cette méthode prend en argument une nouvelle carte et, optionnellement, une nouvelle position pour le joueur.
+
+```js
+const game = createGame();
+game.loadMap(
+  `
+  ########
+  #......#
+  #......#
+  #......#
+  #......#
+  #......#
+  #......#
+  ########
+  `,
+  [3, 5]
+);
+```
