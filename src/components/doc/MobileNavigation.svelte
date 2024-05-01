@@ -22,7 +22,7 @@
   <button on:click={() => (isVisible = !isVisible)} on:keydown={handleKeyDown}>
     Menu
   </button>
-  <Search />
+  <Search id="searchMobile" />
 </div>
 
 {#if isVisible}

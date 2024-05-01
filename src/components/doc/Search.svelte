@@ -3,11 +3,12 @@
 
   let dialog: HTMLDialogElement;
   let searchWrapper: HTMLElement;
+  export let id: string;
   onMount(() => {
     if (window)
       //@ts-ignore
       new PagefindUI({
-        element: "#search",
+        element: `#${id}`,
         showSubResults: true,
         showImages: false,
       });
@@ -73,7 +74,7 @@
         </svg>
       </button>
     </div>
-    <div id="search"></div>
+    <div {id}></div>
   </div>
 </dialog>
 
@@ -92,7 +93,7 @@
     --pagefind-ui-font: sans-serif;
   }
 
-  :global(#search mark) {
+  :global(.pagefind-ui mark) {
     background-color: transparent;
     font-weight: bold;
   }
