@@ -1,6 +1,7 @@
 <script lang="ts">
   import Search from "./Search.svelte";
   import type { DocEntries } from "../../lib/types/docEntry.ts";
+  import { fade, slide } from "svelte/transition";
 
   export let lang: string;
   export let items: DocEntries;
@@ -32,9 +33,12 @@
     <div
       class="bg-gray-900/60 fixed inset-0 z-50"
       on:click={() => (isVisible = false)}
+      transition:fade
     ></div>
+
     <ul
       class="fixed top-0 bg-white bottom-0 px-4 min-w-80 py-4 space-y-4 border-r z-50"
+      transition:fade
     >
       {#each items as item}
         <li>
