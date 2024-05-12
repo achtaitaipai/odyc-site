@@ -66,7 +66,7 @@ Certaines propriétés sont uniquement disponibles en lecture :
 L'objet peut être supprimé grâce à la méthode `remove()`, ce qui le retire du jeu :
 
 ```js
-target.remove();
+target.remove()
 ```
 
 ### Exemple Pratique

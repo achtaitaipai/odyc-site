@@ -12,20 +12,20 @@ Les évènements vous permettent de déclencher des actions lorsque certaines in
 
 ```js
 createGame({
-  templates: {
-    x: {
-      onCollide: function () {
-        alert(1);
-      },
-      onEnter: function () {
-        alert(2);
-      },
-      onEnter: function () {
-        alert(3);
-      },
-    },
-  },
-});
+	templates: {
+		x: {
+			onCollide: function () {
+				alert(1)
+			},
+			onEnter: function () {
+				alert(2)
+			},
+			onEnter: function () {
+				alert(3)
+			}
+		}
+	}
+})
 ```
 
 ## La cible de l'évènement
@@ -55,5 +55,5 @@ Certaines propriétés sont uniquement disponibles en lecture :
 L'objet peut être supprimé grâce à la méthode `remove()`, ce qui le retire du jeu :
 
 ```js
-target.remove();
+target.remove()
 ```

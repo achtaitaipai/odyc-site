@@ -10,10 +10,10 @@ La taille de l'écran détermine la portion du monde du jeu visible pour le joue
 
 ```js
 createGame({
-  //...
-  screenWidth: 16,
-  screenHeight: 12,
-});
+	//...
+	screenWidth: 16,
+	screenHeight: 12
+})
 ```
 
 ## Suivi de la Caméra
@@ -22,10 +22,10 @@ Pour un suivi fluide du joueur, définissez un rectangle central invisible autou
 
 ```js
 createGame({
-  //...
-  cameraWidth: 4,
-  cameraHeight: 4,
-});
+	//...
+	cameraWidth: 4,
+	cameraHeight: 4
+})
 ```
 
 > [!WARNING]

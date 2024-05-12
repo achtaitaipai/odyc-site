@@ -19,15 +19,15 @@ Vous pouvez ajuster le volume général du jeu en définissant le paramètre `vo
 
 ```js
 createGame({
-  //...
-  templates: {
-    G: {
-      sound: createSound("HIT", 999),
-      //...
-    },
-  },
-  volume: 0.8,
-});
+	//...
+	templates: {
+		G: {
+			sound: createSound('HIT', 999)
+			//...
+		}
+	},
+	volume: 0.8
+})
 ```
 
 ## Jouer un son de manière dynamique
@@ -35,8 +35,7 @@ createGame({
 Pour lancer un son indépendament des `templates`, vous pouvez utiliser l’objet `game` retourné par la fonction `createGame`.
 
 ```js
-const game = createGame();
+const game = createGame()
 
-game.playSound("HIT", 999);
+game.playSound('HIT', 999)
 ```
-

@@ -59,13 +59,13 @@ Pour définir un template pour un mur, par exemple :
 
 ```js
 createGame({
-  //...
-  templates: {
-    X: {
-      sprite: 9,
-    },
-  },
-});
+	//...
+	templates: {
+		X: {
+			sprite: 9
+		}
+	}
+})
 ```
 
 Le caractère `X` représente ici un mur et est associé à un sprite spécifique. Vous pouvez utiliser n'importe quel caractère pour représenter différents éléments dans vos templates.
@@ -78,8 +78,8 @@ Voici comment utiliser le template de mur pour dessiner un enclos :
 
 ```js
 createGame({
-  //...
-  map: `
+	//...
+	map: `
       XXXXXXXX
       X......X
       X......X
@@ -88,8 +88,8 @@ createGame({
       X......X
       X......X
       XXXXXXXX
-    `,
-});
+    `
+})
 ```
 
 - Chaque caractère présent dans `templates` sera transformé en l'objet correspondant dans le jeu.

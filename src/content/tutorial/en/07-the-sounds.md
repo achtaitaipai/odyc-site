@@ -123,7 +123,7 @@ Sounds are generated using the excellent tool [jfxr](https://jfxr.frozenfractal.
 >
 > ```js
 > createGame({
->   //...
->   volume: 0.8,
-> });
+> 	//...
+> 	volume: 0.8
+> })
 > ```

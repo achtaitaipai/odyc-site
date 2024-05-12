@@ -20,10 +20,10 @@ Par défaut, les `sprites` sont des carrés de 8x8 pixels. Vous pouvez ajuster c
 
 ```js
 createGame({
-  //...
-  cellWidth: 16,
-  cellHeight: 32,
-});
+	//...
+	cellWidth: 16,
+	cellHeight: 32
+})
 ```
 
 ## Couleurs
@@ -56,18 +56,18 @@ Exemple :
 
 ```js
 createGame({
-  //...
-  colors: [
-    "red",
-    "orange",
-    "lab(50% 40 59.5)",
-    "hwb(12 50% 0%)",
-    "#f06595",
-    "#f09",
-    "oklch(60% 0.15 50)",
-    "hsl(150 30% 60%)",
-    "light-dark(white, black)",
-    "black",
-  ],
-});
+	//...
+	colors: [
+		'red',
+		'orange',
+		'lab(50% 40 59.5)',
+		'hwb(12 50% 0%)',
+		'#f06595',
+		'#f09',
+		'oklch(60% 0.15 50)',
+		'hsl(150 30% 60%)',
+		'light-dark(white, black)',
+		'black'
+	]
+})
 ```

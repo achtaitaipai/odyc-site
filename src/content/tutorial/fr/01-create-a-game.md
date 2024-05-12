@@ -20,7 +20,7 @@ La première étape pour créer un jeu avec OdyCJS est d'utiliser la fonction `c
 Voici à quoi doit ressembler votre code:
 
 ```js
-createGame();
+createGame()
 ```
 
 Cette simple ligne de code est le point de départ de tous les jeux créés avec OdyCJS. Elle prépare le terrain pour l'ajout d'éléments de jeu, tels que des scènes, des dialogues et des interactions.

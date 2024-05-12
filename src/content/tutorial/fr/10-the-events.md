@@ -95,17 +95,17 @@ Pour que les pièces `C` disparaissent lorsqu'elles sont touchées par le joueur
 
 ```js
 createGame({
-  //...
-  templates: {
-    C: {
-      //...
-      onCollide: function (target) {
-        target.remove();
-      },
-    },
-  },
-  //...
-});
+	//...
+	templates: {
+		C: {
+			//...
+			onCollide: function (target) {
+				target.remove()
+			}
+		}
+	}
+	//...
+})
 ```
 
 Cette fonction se déclenche automatiquement lorsqu'une collision est détectée entre le joueur et l'objet `C`, entraînant la suppression de l'objet du jeu.

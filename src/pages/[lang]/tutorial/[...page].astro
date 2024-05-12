@@ -1,123 +1,113 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
-import Dropdown from "../../../components/Dropdown.svelte";
-import TutorialLayout from "../../../components/tutorial/Layout.svelte";
-import Base from "../../../layouts/Base.astro";
-import { languages } from "../../../lib/i18n/ui";
-import { useTranslations } from "../../../lib/i18n/utils.ts";
+import type { GetStaticPaths } from 'astro'
+import { getCollection } from 'astro:content'
+import Dropdown from '../../../components/Dropdown.svelte'
+import TutorialLayout from '../../../components/tutorial/Layout.svelte'
+import Base from '../../../layouts/Base.astro'
+import { languages } from '../../../lib/i18n/ui'
+import { useTranslations } from '../../../lib/i18n/utils.ts'
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allTutorials = await getCollection("tutorial");
+	const allTutorials = await getCollection('tutorial')
 
-  return Object.keys(languages).flatMap((lang) => {
-    const filteredTutorials = allTutorials.filter((el) => {
-      const [currentLang] = el.slug.split("/");
-      return currentLang === lang;
-    });
-    return paginate(filteredTutorials, {
-      params: { lang },
-      pageSize: 1,
-    });
-  });
-}) satisfies GetStaticPaths;
+	return Object.keys(languages).flatMap((lang) => {
+		const filteredTutorials = allTutorials.filter((el) => {
+			const [currentLang] = el.slug.split('/')
+			return currentLang === lang
+		})
+		return paginate(filteredTutorials, {
+			params: { lang },
+			pageSize: 1
+		})
+	})
+}) satisfies GetStaticPaths
 
-const lang = Astro.params.lang as keyof typeof languages;
-const t = useTranslations(lang);
+const lang = Astro.params.lang as keyof typeof languages
+const t = useTranslations(lang)
 
-const page = Astro.props.page.data[0];
-const { url } = Astro.props.page;
+const page = Astro.props.page.data[0]
+const { url } = Astro.props.page
 
-const { render, data } = page;
-const { Content } = await render();
-const { title, base, solution } = data;
+const { render, data } = page
+const { Content } = await render()
+const { title, base, solution } = data
 
-const tutorials = (await getCollection("tutorial")).filter((el) => {
-  const [currentLang] = el.slug.split("/");
-  return currentLang === lang;
-});
+const tutorials = (await getCollection('tutorial')).filter((el) => {
+	const [currentLang] = el.slug.split('/')
+	return currentLang === lang
+})
 ---
 
-<Base title={`${t("nav.tutorial")} • ${title}`}>
-  <TutorialLayout {lang} baseCode={base} solutionCode={solution} client:idle>
-    <div slot="header" class="px-2">
-      <Dropdown client:idle>
-        <h1 class="text-lg font-semibold" slot="current">{title}</h1>
-        <ul
-          class="grid gap-4 py-4 pl-4 pr-2 shadow w-80 max-h-80 overflow-auto"
-        >
-          {
-            tutorials.map((el, i) => (
-              <li class="">
-                <a
-                  href={`/${lang}/tutorial/${i > 0 ? i + 1 : ""}`}
-                  class="hover:text-blue-700 block"
-                >
-                  {i + 1}. {el.data.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </Dropdown>
-    </div>
-    <Content />
-    <ul slot="pagination" class="grid grid-cols-2 gap-4">
-      {
-        url.prev && (
-          <li>
-            <a
-              href={url.prev}
-              title={t("pagination.previous")}
-              class="flex items-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
-              <span>{t("pagination.previous")}</span>
-            </a>
-          </li>
-        )
-      }
+<Base title={`${t('nav.tutorial')} • ${title}`}>
+	<TutorialLayout {lang} baseCode={base} solutionCode={solution} client:idle>
+		<div slot="header" class="px-2">
+			<Dropdown client:idle>
+				<h1 class="text-lg font-semibold" slot="current">{title}</h1>
+				<ul class="grid max-h-80 w-80 gap-4 overflow-auto py-4 pl-4 pr-2 shadow">
+					{
+						tutorials.map((el, i) => (
+							<li class="">
+								<a
+									href={`/${lang}/tutorial/${i > 0 ? i + 1 : ''}`}
+									class="block hover:text-blue-700"
+								>
+									{i + 1}. {el.data.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</Dropdown>
+		</div>
+		<Content />
+		<ul slot="pagination" class="grid grid-cols-2 gap-4">
+			{
+				url.prev && (
+					<li>
+						<a href={url.prev} title={t('pagination.previous')} class="flex items-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="h-6 w-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15.75 19.5 8.25 12l7.5-7.5"
+								/>
+							</svg>
+							<span>{t('pagination.previous')}</span>
+						</a>
+					</li>
+				)
+			}
 
-      {
-        url.next && (
-          <li class="col-start-2 justify-self-end">
-            <a
-              href={url.next}
-              title={t("pagination.next")}
-              class="flex items-center"
-            >
-              <span>{t("pagination.next")}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </a>
-          </li>
-        )
-      }
-    </ul>
-  </TutorialLayout>
+			{
+				url.next && (
+					<li class="col-start-2 justify-self-end">
+						<a href={url.next} title={t('pagination.next')} class="flex items-center">
+							<span>{t('pagination.next')}</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="h-6 w-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="m8.25 4.5 7.5 7.5-7.5 7.5"
+								/>
+							</svg>
+						</a>
+					</li>
+				)
+			}
+		</ul>
+	</TutorialLayout>
 </Base>

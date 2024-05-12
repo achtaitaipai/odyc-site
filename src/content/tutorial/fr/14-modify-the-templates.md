@@ -75,19 +75,19 @@ Utiliser la fonction `setAll` de l'objet `game` permet de modifier simultanémen
 
 ```js
 const game = createGame({
-  // Configuration initiale du jeu
-  templates: {
-    X: {
-      // Configuration initiale de X
-    },
-  },
-  // Autres configurations
-});
+	// Configuration initiale du jeu
+	templates: {
+		X: {
+			// Configuration initiale de X
+		}
+	}
+	// Autres configurations
+})
 
-game.setAll("X", {
-  dialog: "Bonjour",
-  sprite: 6,
-});
+game.setAll('X', {
+	dialog: 'Bonjour',
+	sprite: 6
+})
 ```
 
 > [!TIP]
@@ -95,10 +95,10 @@ game.setAll("X", {
 >
 > ```js
 > // Supprime tous les "X"
-> game.removeAll("X");
+> game.removeAll('X')
 >
 > // Crée un nouveau "X" à la position [3, 5]
-> game.addToCell(3, 5, "X");
+> game.addToCell(3, 5, 'X')
 > ```
 
 Cette fonctionnalité permet de créer des mécanismes de jeu où les interactions du joueur avec un élément peuvent influencer l'ensemble du niveau, comme changer l'apparence de tous les obstacles similaires lors d'une collision. Expérimentez avec cette capacité pour dynamiser vos niveaux et proposer des puzzles interactifs et évolutifs qui enrichissent l'expérience de jeu.

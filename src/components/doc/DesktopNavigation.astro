@@ -1,43 +1,40 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import Search from "./Search.svelte";
+import type { CollectionEntry } from 'astro:content'
+import Search from './Search.svelte'
 
 export type Props = {
-  lang: string;
-  items: CollectionEntry<"documentation">[];
-  currentSection: string;
-};
+	lang: string
+	items: CollectionEntry<'documentation'>[]
+	currentSection: string
+}
 
-const { lang, items, currentSection } = await Astro.props;
+const { lang, items, currentSection } = await Astro.props
 
 const formatSlug = (fileName: string) => {
-  const [_, slug] = fileName.split("/");
-  return slug.replace(/\d+-/, "");
-};
+	const [_, slug] = fileName.split('/')
+	return slug.replace(/\d+-/, '')
+}
 ---
 
 <nav
-  class="hidden xl:block fixed w-72 py-4 px-4 h-[calc(100svh_-_var(--header-height))] overflow-auto border-r"
+	class="fixed hidden h-[calc(100svh_-_var(--header-height))] w-72 overflow-auto border-r px-4 py-4 xl:block"
 >
-  <ul class="space-y-4">
-    {
-      items.map((el) => (
-        <li>
-          <a
-            href={`/${lang}/documentation/${formatSlug(el.slug)}`}
-            class="text-lg hover:underline underline-offset-4"
-            class:list={[
-              formatSlug(el.slug) === currentSection &&
-                "text-blue-800 underline",
-            ]}
-          >
-            {el.data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <div class="text-lg mt-6">
-    <Search id="searchDesktop" client:only />
-  </div>
+	<ul class="space-y-4">
+		{
+			items.map((el) => (
+				<li>
+					<a
+						href={`/${lang}/documentation/${formatSlug(el.slug)}`}
+						class="text-lg underline-offset-4 hover:underline"
+						class:list={[formatSlug(el.slug) === currentSection && 'text-blue-800 underline']}
+					>
+						{el.data.title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<div class="mt-6 text-lg">
+		<Search id="searchDesktop" client:only />
+	</div>
 </nav>

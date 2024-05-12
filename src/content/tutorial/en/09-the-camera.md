@@ -114,10 +114,10 @@ The screen size determines the portion of the game world visible to the player. 
 
 ```js
 createGame({
-  //...
-  screenWidth: 16,
-  screenHeight: 12,
-});
+	//...
+	screenWidth: 16,
+	screenHeight: 12
+})
 ```
 
 These adjustments allow you to widen or narrow the view based on gameplay objectives.
@@ -128,10 +128,10 @@ For smooth player tracking, define an invisible central rectangle around which t
 
 ```js
 createGame({
-  //...
-  cameraWidth: 4,
-  cameraHeight: 4,
-});
+	//...
+	cameraWidth: 4,
+	cameraHeight: 4
+})
 ```
 
 > [!NOTE]

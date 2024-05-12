@@ -59,13 +59,13 @@ For example, to define a template for a wall:
 
 ```js
 createGame({
-  //...
-  templates: {
-    X: {
-      sprite: 9,
-    },
-  },
-});
+	//...
+	templates: {
+		X: {
+			sprite: 9
+		}
+	}
+})
 ```
 
 Here, the character `X` represents a wall and is associated with a specific sprite. You can use any character to represent different elements in your templates.
@@ -78,8 +78,8 @@ Here's how to use the wall template to draw an enclosure:
 
 ```js
 createGame({
-  //...
-  map: `
+	//...
+	map: `
       XXXXXXXX
       X......X
       X......X
@@ -88,8 +88,8 @@ createGame({
       X......X
       X......X
       XXXXXXXX
-    `,
-});
+    `
+})
 ```
 
 - Each character present in `templates` will be transformed into the corresponding object in the game.

@@ -16,20 +16,20 @@ Pour ceux qui préfèrent travailler localement mais sans configuration de build
 - Insérez le code suivant :
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://www.unpkg.com/odyc@0.0.18/dist/index.global.js"></script>
-  </head>
-  <body>
-    <script>
-      const game = odyc.createGame({
-        title: "Mon super jeu",
-      });
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://www.unpkg.com/odyc@0.0.18/dist/index.global.js"></script>
+	</head>
+	<body>
+		<script>
+			const game = odyc.createGame({
+				title: 'Mon super jeu'
+			})
+		</script>
+	</body>
 </html>
 ```
 
@@ -48,9 +48,9 @@ npm install odyc
 - Importez OdyCJS dans votre fichier JavaScript ou Typescript principal :
 
 ```javascript
-import { createGame } from "odyc";
+import { createGame } from 'odyc'
 
 const game = createGame({
-  title: "Mon Super Jeu",
-});
+	title: 'Mon Super Jeu'
+})
 ```

@@ -17,9 +17,9 @@ Here's an example:
 
 ```js
 createGame({
-  title: "My Game",
-  background: 3,
-});
+	title: 'My Game',
+	background: 3
+})
 ```
 
 > [!NOTE]

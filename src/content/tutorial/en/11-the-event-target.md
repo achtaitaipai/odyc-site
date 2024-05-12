@@ -66,7 +66,7 @@ Some properties are read-only:
 The object can be removed with the `remove()` method, which takes it out of the game:
 
 ```js
-target.remove();
+target.remove()
 ```
 
 ### Practical Example

@@ -1,43 +1,43 @@
 ---
-import "remark-gh-alerts/styles/github-colors-light.css";
-import "remark-gh-alerts/styles/github-base.css";
-import { getLangFromUrl } from "../lib/i18n/utils.ts";
-import Header from "../components/Header.astro";
+import 'remark-gh-alerts/styles/github-colors-light.css'
+import 'remark-gh-alerts/styles/github-base.css'
+import { getLangFromUrl } from '../lib/i18n/utils.ts'
+import Header from '../components/Header.astro'
 
 export type Props = {
-  title?: string;
-};
+	title?: string
+}
 
-const { title } = await Astro.props;
-const pageTitle = title ? `Odyc-js • ${title}` : "odyC-js";
+const { title } = await Astro.props
+const pageTitle = title ? `Odyc-js • ${title}` : 'odyC-js'
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-    <script src="/pagefind/pagefind-ui.js" is:inline></script>
-    <title>{pageTitle}</title>
-  </head>
-  <body class="color-gray-900">
-    <Header />
-    <slot />
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+		<script src="/pagefind/pagefind-ui.js" is:inline></script>
+		<title>{pageTitle}</title>
+	</head>
+	<body class="color-gray-900">
+		<Header />
+		<slot />
+	</body>
 </html>
 
 <style is:global>
-  :root {
-  }
-  .markdown-alert > *::before,
-  .markdown-alert > *::after {
-    content: none;
-  }
-  .markdown-alert {
-    font-weight: normal;
-  }
+	:root {
+	}
+	.markdown-alert > *::before,
+	.markdown-alert > *::after {
+		content: none;
+	}
+	.markdown-alert {
+		font-weight: normal;
+	}
 </style>

@@ -1,20 +1,20 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content'
 
 const tutoCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    base: z.string(),
-    solution: z.string(),
-  }),
-});
+	schema: z.object({
+		title: z.string(),
+		base: z.string(),
+		solution: z.string()
+	})
+})
 
 const documentationCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-  }),
-});
+	schema: z.object({
+		title: z.string()
+	})
+})
 
 export const collections = {
-  tutorial: tutoCollection,
-  documentation: documentationCollection,
-};
+	tutorial: tutoCollection,
+	documentation: documentationCollection
+}

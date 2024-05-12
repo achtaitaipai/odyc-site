@@ -1,23 +1,23 @@
 ---
-import type { GetStaticPaths } from "astro";
-import Editor from "../../components/Playground.svelte";
-import Base from "../../layouts/Base.astro";
-import { languages } from "../../lib/i18n/ui.js";
-import { useTranslations } from "../../lib/i18n/utils.js";
+import type { GetStaticPaths } from 'astro'
+import Editor from '../../components/Playground.svelte'
+import Base from '../../layouts/Base.astro'
+import { languages } from '../../lib/i18n/ui.js'
+import { useTranslations } from '../../lib/i18n/utils.js'
 
 export const getStaticPaths = (() => {
-  return Object.keys(languages).map((lang) => ({
-    params: {
-      lang,
-    },
-  }));
-}) satisfies GetStaticPaths;
+	return Object.keys(languages).map((lang) => ({
+		params: {
+			lang
+		}
+	}))
+}) satisfies GetStaticPaths
 
-const params = await Astro.params;
-const lang = params.lang as keyof typeof languages;
-const t = useTranslations(lang);
+const params = await Astro.params
+const lang = params.lang as keyof typeof languages
+const t = useTranslations(lang)
 ---
 
-<Base title={t("nav.playground")}>
-  <Editor client:only {lang} />
+<Base title={t('nav.playground')}>
+	<Editor client:only {lang} />
 </Base>

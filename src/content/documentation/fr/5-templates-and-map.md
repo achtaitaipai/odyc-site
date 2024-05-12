@@ -17,22 +17,22 @@ Pour chaque `template`, vous pouvez définir les propriétés suivantes :
 
 ```js
 createGame({
-  //...
-  templates: {
-    R: {
-      sprite: 6,
-      sound: createSound("HIT", 999),
-      visible: false,
-      end: "Perdu",
-    },
-    G: {
-      sprite: 7,
-      dialog: "Je suis de l'herbe.",
-      solid: false,
-    },
-  },
-  //...
-});
+	//...
+	templates: {
+		R: {
+			sprite: 6,
+			sound: createSound('HIT', 999),
+			visible: false,
+			end: 'Perdu'
+		},
+		G: {
+			sprite: 7,
+			dialog: "Je suis de l'herbe.",
+			solid: false
+		}
+	}
+	//...
+})
 ```
 
 ## Map

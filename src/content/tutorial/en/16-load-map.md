@@ -118,7 +118,7 @@ The `loadMap` method opens the door to a variety of applications such as progres
 To load a new map, simply invoke the `loadMap` method on the `game` object, passing the desired map as a parameter:
 
 ```js
-game.loadMap(level2);
+game.loadMap(level2)
 ```
 
 ### Player Positioning
@@ -126,7 +126,7 @@ game.loadMap(level2);
 The `loadMap` function also offers the ability to reposition the player to a new location on the loaded map, thus providing greater flexibility in scene and transition management:
 
 ```js
-game.loadMap(level2, [3, 5]);
+game.loadMap(level2, [3, 5])
 ```
 
 > [!WARNING]

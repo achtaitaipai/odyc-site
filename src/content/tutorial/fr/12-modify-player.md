@@ -60,12 +60,12 @@ Pour interagir avec le joueur et modifier ses propriétés, vous pouvez agir dir
 
 ```js
 const game = createGame({
-  // Configuration initiale du jeu
-});
+	// Configuration initiale du jeu
+})
 // Modifier l'apparence du joueur
-game.player.sprite = 8;
+game.player.sprite = 8
 // Repositionner le joueur
-game.player.position = [4, 4];
+game.player.position = [4, 4]
 ```
 
 ### Interaction via les Événements

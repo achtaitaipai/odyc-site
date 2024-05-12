@@ -95,17 +95,17 @@ To make the coins `C` disappear when touched by the player, you can use the `onC
 
 ```js
 createGame({
-  //...
-  templates: {
-    C: {
-      //...
-      onCollide: function (target) {
-        target.remove();
-      },
-    },
-  },
-  //...
-});
+	//...
+	templates: {
+		C: {
+			//...
+			onCollide: function (target) {
+				target.remove()
+			}
+		}
+	}
+	//...
+})
 ```
 
 This function is automatically triggered when a collision is detected between the player and the object `C`, leading to the removal of the object from the game.

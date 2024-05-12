@@ -165,13 +165,13 @@ Pour réaliser cela, vous pouvez utiliser la fonction `getCell`, accessible via 
 
 ```js
 const game = createGame({
-  // Configuration du jeu
-});
+	// Configuration du jeu
+})
 
 // Rendre un objet invisible à une position spécifique
-game.getCell(3, 4).visible = false;
+game.getCell(3, 4).visible = false
 // Supprimer un objet à une position spécifique
-game.getCell(6, 6).remove();
+game.getCell(6, 6).remove()
 ```
 
 Dans l'exemple fourni, nous utilisons `getCell` pour rendre la porte (située à la position [5, 4]) non solide après que le joueur ait ramassé la clé. Cela ouvre de nouvelles possibilités pour créer des puzzles et des mécanismes de jeu interactifs, où les actions du joueur peuvent avoir un impact direct sur l'environnement de jeu.

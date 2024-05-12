@@ -75,19 +75,19 @@ Using the `setAll` function provided by the `game` object allows for the simulta
 
 ```js
 const game = createGame({
-  // Initial game setup
-  templates: {
-    X: {
-      // Initial configuration for X
-    },
-  },
-  // Other configurations
-});
+	// Initial game setup
+	templates: {
+		X: {
+			// Initial configuration for X
+		}
+	}
+	// Other configurations
+})
 
-game.setAll("X", {
-  dialog: "Hello",
-  sprite: 6,
-});
+game.setAll('X', {
+	dialog: 'Hello',
+	sprite: 6
+})
 ```
 
 > [!TIP]
@@ -95,10 +95,10 @@ game.setAll("X", {
 >
 > ```js
 > // Removes all "X"
-> game.removeAll("X");
+> game.removeAll('X')
 >
 > // Creates a new "X" at position [3, 5]
-> game.addToCell(3, 5, "X");
+> game.addToCell(3, 5, 'X')
 > ```
 
 This feature enables the creation of game mechanics where the player's interaction with an element can influence the entire level, such as changing the appearance of all similar obstacles upon a collision. Experiment with this capability to energize your levels and offer interactive and evolving puzzles that enrich the gaming experience.

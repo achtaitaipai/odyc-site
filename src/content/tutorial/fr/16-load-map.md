@@ -118,7 +118,7 @@ La méthode `loadMap` ouvre la voie à une variété d'applications telles que l
 Pour charger une nouvelle carte, invoquez la méthode `loadMap` sur l'objet `game`, en passant la carte désirée comme paramètre :
 
 ```js
-game.loadMap(level2);
+game.loadMap(level2)
 ```
 
 ### Positionnement du Joueur
@@ -126,7 +126,7 @@ game.loadMap(level2);
 La fonction `loadMap` offre également la possibilité de repositionner le joueur à un nouvel emplacement sur la carte chargée, offrant ainsi une plus grande flexibilité dans la gestion des scènes et des transitions :
 
 ```js
-game.loadMap(level2, [3, 5]);
+game.loadMap(level2, [3, 5])
 ```
 
 > [!WARNING]

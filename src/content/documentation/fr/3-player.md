@@ -19,8 +19,8 @@ La configuration du `player` vous permet de définir les caractéristiques initi
 
 ```js
 createGame({
-  player: {
-    sprite: `
+	player: {
+		sprite: `
 			...99...
 			...88...
 			.000000.
@@ -30,9 +30,9 @@ createGame({
 			..3..3..
 			..0..0..
 		`,
-    position: [3, 5],
-  },
-});
+		position: [3, 5]
+	}
+})
 ```
 
 ## Modification dynamique de l'état du `player`
@@ -41,9 +41,9 @@ Pour modifier ou consulter l'état du `player`, vous pouvez utiliser l'objet `ga
 
 ```js
 const game = createGame({
-  // Paramètres initiaux du jeu
-});
+	// Paramètres initiaux du jeu
+})
 
-game.player.sprite = 5; // Change l'apparence du joueur
-game.player.position = [6, 6]; // Déplace le joueur à la position [6, 6]
+game.player.sprite = 5 // Change l'apparence du joueur
+game.player.position = [6, 6] // Déplace le joueur à la position [6, 6]
 ```

@@ -8,12 +8,12 @@ La boîte de dialogue se déclenche lorsque le joueur intéragit avec un éléme
 
 ```js
 crateGame({
-  templates: {
-    "@": {
-      dialog: "Bonjour, comment allez-vous ?",
-    },
-  },
-});
+	templates: {
+		'@': {
+			dialog: 'Bonjour, comment allez-vous ?'
+		}
+	}
+})
 ```
 
 > [!NOTE]
@@ -30,9 +30,9 @@ crateGame({
 Pour ouvrir la boîte de dialogue vous pouvez également utiliser l’objet `game` retourné par la fonction `createGame`.
 
 ```js
-const game = createGame();
+const game = createGame()
 
-game.openDialog("Bonjour!");
+game.openDialog('Bonjour!')
 ```
 
 ## Configurer la boîte de dialogue
@@ -41,8 +41,8 @@ Pour configurer les couleurs de la boîte de dialogue, vous devrez utiliser les 
 
 ```js
 createGame({
-  //...
-  dialogColor: "red",
-  dialogBackground: "#228be6",
-});
+	//...
+	dialogColor: 'red',
+	dialogBackground: '#228be6'
+})
 ```
