@@ -1,9 +1,7 @@
 <script lang="ts" type="module">
-  import { javascript } from "@codemirror/lang-javascript";
-  import Editor from "svelte-codemirror-editor";
-  import { editorConfig } from "../../lib/editorConfig.ts";
-  import { updateIframe } from "../../lib/processCode.ts";
-  import { espresso } from "thememirror";
+  import Editor from "svelte-codemirror-editor"
+  import { editorConfig } from "src/lib/editorConfig.ts"
+  import { updateIframe } from "src/lib/processCode.ts"
 
   export let code = "";
   export let lang: string;

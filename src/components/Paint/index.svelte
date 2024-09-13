@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { click_outside } from "../../lib/svelteActions/clickOutside.ts";
+  import { click_outside } from "src/lib/svelteActions/clickOutside.ts";
   import {
     defaultColors,
     drawGrid,
@@ -12,9 +12,9 @@
     stringToGrid,
   } from "./utils.ts";
   import { tick } from "svelte";
-  import type { languages } from "../../lib/i18n/ui.ts";
-  import { useTranslations } from "../../lib/i18n/utils.ts";
-  import Button from "../Button.svelte";
+  import type { languages } from "src/lib/i18n/ui.ts";
+  import { useTranslations } from "src/lib/i18n/utils.ts";
+  import Button from "src/components/Button.svelte";
 
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);

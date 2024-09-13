@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { languages } from "../../lib/i18n/ui.ts";
-  import { useTranslations } from "../../lib/i18n/utils.ts";
-  import Button from "../Button.svelte";
+  import type { languages } from "src/lib/i18n/ui.ts";
+  import { useTranslations } from "src/lib/i18n/utils.ts";
+  import Button from "src/components/Button.svelte";
   import Editor from "./Editor.svelte";
 
   export let baseCode: string;

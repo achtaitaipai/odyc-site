@@ -1,10 +1,10 @@
 <script lang="ts" type="module">
   import { onMount } from "svelte";
   import Editor from "svelte-codemirror-editor";
-  import { editorConfig } from "../lib/editorConfig.ts";
-  import { languages } from "../lib/i18n/ui.ts";
-  import { useTranslations } from "../lib/i18n/utils";
-  import { parseCode, prepareCode, updateIframe } from "../lib/processCode.ts";
+  import { editorConfig } from "src/lib/editorConfig.ts";
+  import { languages } from "src/lib/i18n/ui.ts";
+  import { useTranslations } from "src/lib/i18n/utils";
+  import { parseCode, prepareCode, updateIframe } from "src/lib/processCode.ts";
   import Button from "./Button.svelte";
   import Paint from "./Paint/index.svelte";
   import Sound from "./Sound/index.svelte";

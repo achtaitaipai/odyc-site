@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import Editor from '../../components/Playground.svelte'
-import Base from '../../layouts/Base.astro'
-import { languages } from '../../lib/i18n/ui.js'
-import { useTranslations } from '../../lib/i18n/utils.js'
+import Editor from 'src/components/Playground.svelte'
+import Base from 'src/layouts/Base.astro'
+import { languages } from 'src/lib/i18n/ui.js'
+import { useTranslations } from 'src/lib/i18n/utils.js'
 
 export const getStaticPaths = (() => {
 	return Object.keys(languages).map((lang) => ({

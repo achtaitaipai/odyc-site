@@ -1,6 +1,6 @@
 <script lang="ts">
   import Search from "./Search.svelte";
-  import type { DocEntries } from "../../lib/types/docEntry.ts";
+  import type { DocEntries } from "src/lib/types/docEntry.ts";
   import { fade, slide } from "svelte/transition";
 
   export let lang: string;

@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
-import Dropdown from '../../../components/Dropdown.svelte'
-import TutorialLayout from '../../../components/tutorial/Layout.svelte'
-import Base from '../../../layouts/Base.astro'
-import { languages } from '../../../lib/i18n/ui'
-import { useTranslations } from '../../../lib/i18n/utils.ts'
+import Dropdown from 'src/components/Dropdown.svelte'
+import TutorialLayout from 'src/components/tutorial/Layout.svelte'
+import Base from 'src/layouts/Base.astro'
+import { languages } from 'src/lib/i18n/ui'
+import { useTranslations } from 'src/lib/i18n/utils.ts'
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allTutorials = await getCollection('tutorial')

@@ -1,16 +1,16 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { click_outside } from "../../lib/svelteActions/clickOutside.ts";
-  import type { languages } from "../../lib/i18n/ui.ts";
-  import { useTranslations } from "../../lib/i18n/utils.ts";
+  import { click_outside } from "src/lib/svelteActions/clickOutside.ts";
+  import type { languages } from "src/lib/i18n/ui.ts";
+  import { useTranslations } from "src/lib/i18n/utils.ts";
   import {
     FxEnum,
     SoundPlayer,
     createSound,
     type FxKey,
-  } from "../../lib/jfxr/index.ts";
+  } from "src/lib/jfxr/index.ts";
   import { onMount } from "svelte";
-  import Button from "../Button.svelte";
+  import Button from "src/components/Button.svelte";
 
   export let lang: keyof typeof languages;
   const t = useTranslations(lang);

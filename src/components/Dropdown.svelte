@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { click_outside } from "../lib/svelteActions/clickOutside.ts";
+  import { click_outside } from "src/lib/svelteActions/clickOutside.ts";
   import { slide } from "svelte/transition";
   let isOpen = false;
   const handleKeydown = (e: KeyboardEvent) => {

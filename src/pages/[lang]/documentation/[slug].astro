@@ -1,10 +1,10 @@
 ---
-import { languages } from '../../../lib/i18n/ui'
+import { languages } from 'src/lib/i18n/ui'
 import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
-import Base from '../../../layouts/Base.astro'
-import DesktopNavigation from '../../../components/doc/DesktopNavigation.astro'
-import MobileNavigation from '../../../components/doc/MobileNavigation.svelte'
+import Base from 'src/layouts/Base.astro'
+import DesktopNavigation from 'src/components/doc/DesktopNavigation.astro'
+import MobileNavigation from 'src/components/doc/MobileNavigation.svelte'
 export const getStaticPaths = (async () => {
 	const allDoc = await getCollection('documentation')
 	return allDoc.map((el) => {
