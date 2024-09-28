@@ -27,6 +27,8 @@ const formatSlug = (fileName: string) => {
 						href={`/${lang}/documentation/${formatSlug(el.slug)}`}
 						class="text-lg underline-offset-4 hover:underline"
 						class:list={[formatSlug(el.slug) === currentSection && 'text-blue-800 underline']}
+						data-slug={formatSlug(el.slug)}
+						data-section={currentSection}
 					>
 						{el.data.title}
 					</a>
