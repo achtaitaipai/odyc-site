@@ -69,6 +69,10 @@
     if (ctx) drawGrid(grid, spriteWidth, target.valueAsNumber, ctx);
   };
 
+  const clearCanvas = () => {
+    grid = initGrid(spriteWidth,spriteHeight)
+  }
+
   const copyToClipBoard = () => {
     const text = gridToString(grid, spriteWidth, spriteHeight);
     navigator.clipboard.writeText(text);
@@ -134,7 +138,7 @@
         <div class="flex flex-col py-1 gap-2">
           <label
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >{t("paint.width")} :
+            >{t("paint.width")} {spriteWidth} {t("paint.px")}
             <input
               type="range"
               min="2"
@@ -147,7 +151,7 @@
 
           <label
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >{t("paint.width")} :
+            >{t("paint.height")} {spriteHeight} {t("paint.px")}
             <input
               type="range"
               min="2"
@@ -159,6 +163,7 @@
           </label>
         </div>
         <div class="py-1 flex items-center gap-4 justify-end">
+          <Button on:click={clearCanvas}>{t("paint.clear")}</Button>
           <Button on:click={copyToClipBoard}>{t("paint.copy")}</Button>
         </div>
       </div>

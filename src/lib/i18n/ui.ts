@@ -20,6 +20,8 @@ export const ui = {
 		'paint.copy': 'Copy',
 		'paint.width': 'Width',
 		'paint.height': 'Height',
+		'paint.clear': 'Clear',
+		'paint.px': 'px',
 		sound: 'Sound',
 		'sound.copy': 'Copy',
 		'sound.play': 'Play'
@@ -38,6 +40,8 @@ export const ui = {
 		'paint.copy': 'Copier',
 		'paint.width': 'Largeur',
 		'paint.height': 'Hauteur',
+		'paint.clear': 'Effacer',
+		'paint.px': 'px',
 		sound: 'Son',
 		'sound.copy': 'Copier',
 		'sound.play': 'Lire'
