@@ -35,15 +35,13 @@ const navItems = (await getCollection('documentation'))
 
 const { Content } = await render()
 
-const { href } = Astro.url
-
-const currentSection = href.split('/').at(-1) ?? ''
+const {slug} = Astro.params
 ---
 
 <Base title={title}>
-	<MobileNavigation items={navItems} lang={lang} currentSection={currentSection} client:idle />
+	<MobileNavigation items={navItems} lang={lang} currentSlug={slug} client:idle />
 	<div class="flex">
-		<DesktopNavigation lang={lang} items={navItems} currentSection={currentSection} />
+		<DesktopNavigation lang={lang} items={navItems} currentSlug={slug} />
 		<main class="w-full px-4" data-pagefind-body>
 			<div class="prose mx-auto py-8">
 				<Content />

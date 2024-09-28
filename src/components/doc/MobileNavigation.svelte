@@ -5,7 +5,7 @@
 
   export let lang: string;
   export let items: DocEntries;
-  export let currentSection: string;
+  export let currentSlug: string;
   let isVisible = false;
 
   const formatSlug = (fileName: string) => {
@@ -46,7 +46,7 @@
             href={`/${lang}/documentation/${formatSlug(item.slug)}`}
             class=" text-lg hover:underline underline-offset-4 {formatSlug(
               item.slug
-            ) === currentSection
+            ) === currentSlug
               ? 'text-blue-800 underline'
               : ''}">{item.data.title}</a
           >

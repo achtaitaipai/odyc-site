@@ -5,10 +5,10 @@ import Search from './Search.svelte'
 export type Props = {
 	lang: string
 	items: CollectionEntry<'documentation'>[]
-	currentSection: string
+	currentSlug: string
 }
 
-const { lang, items, currentSection } = await Astro.props
+const { lang, items, currentSlug } = await Astro.props
 
 const formatSlug = (fileName: string) => {
 	const [_, slug] = fileName.split('/')
@@ -19,16 +19,17 @@ const formatSlug = (fileName: string) => {
 <nav
 	class="fixed hidden h-[calc(100svh_-_var(--header-height))] w-72 overflow-auto border-r px-4 py-4 xl:block"
 >
-	<ul class="space-y-4">
+<div class="text-lg">
+	<Search id="searchDesktop" client:only />
+</div>
+	<ul class="mt-6 space-y-4">
 		{
 			items.map((el) => (
 				<li>
 					<a
 						href={`/${lang}/documentation/${formatSlug(el.slug)}`}
 						class="text-lg underline-offset-4 hover:underline"
-						class:list={[formatSlug(el.slug) === currentSection && 'text-blue-800 underline']}
-						data-slug={formatSlug(el.slug)}
-						data-section={currentSection}
+						class:list={[formatSlug(el.slug) === currentSlug && 'text-blue-800 underline']}
 					>
 						{el.data.title}
 					</a>
@@ -36,7 +37,4 @@ const formatSlug = (fileName: string) => {
 			))
 		}
 	</ul>
-	<div class="mt-6 text-lg">
-		<Search id="searchDesktop" client:only />
-	</div>
 </nav>
