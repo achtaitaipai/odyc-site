@@ -2,17 +2,15 @@ import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import ghAlerts from "remark-gh-alerts";
-import { transformerNotationDiff } from "@shikijs/transformers";
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://odyc-site.pages.dev/",
-  integrations: [svelte(), tailwind()],
+  integrations: [svelte(), tailwind(), expressiveCode({
+    themes: 'github-dark-high-contrast'
+  })],
   markdown: {
-    shikiConfig: {
-      theme: "github-dark",
-      transformers: [transformerNotationDiff()],
-    },
-    remarkPlugins: [ghAlerts],
-  },
+    remarkPlugins: [ghAlerts]
+  }
 });

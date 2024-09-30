@@ -16,6 +16,7 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"@codemirror/lang-javascript": "^6.2.2",
 		"astro": "^4.5.5",
+		"astro-expressive-code": "^0.37.0",
 		"jfxr": "^0.13.0",
 		"odyc": "^0.0.24",
 		"open-color": "^1.9.1",
@@ -27,7 +28,6 @@
 		"typescript": "^5.4.2"
 	},
 	"devDependencies": {
-		"@shikijs/transformers": "^1.2.1",
 		"@tailwindcss/typography": "^0.5.10",
 		"pagefind": "^1.1.0",
 		"prettier": "^3.2.5",
