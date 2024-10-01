@@ -1,9 +1,8 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import Editor from 'src/components/Playground.svelte'
 import Base from 'src/layouts/Base.astro'
-import { languages } from 'src/lib/i18n/ui.js'
-import { useTranslations } from 'src/lib/i18n/utils.js'
+import { languages } from 'src/lib/i18n/ui.ts'
+import { useTranslations } from 'src/lib/i18n/utils.ts'
 
 export const getStaticPaths = (() => {
 	return Object.keys(languages).map((lang) => ({
@@ -17,7 +16,7 @@ const params = Astro.params
 const lang = params.lang as keyof typeof languages
 const t = useTranslations(lang)
 ---
-
-<Base title={t('nav.playground')}>
-	<Editor client:only {lang} />
+<Base>
+	<h1>OdyC, jouez à créer vos jeux.</h1>
+	<p>Une petite librairie javascript qui permet de coder des jeux-vidéo, même sans expérience en programmation.</p>
 </Base>
