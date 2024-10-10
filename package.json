@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro check && astro build && pagefind --output-path dist/pagefind",
+		"build": "astro check && astro build && pagefind --output-path dist/pagefind && cp dist/en/index.html dist/index.html",
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier src --write"
