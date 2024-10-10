@@ -12,7 +12,7 @@
 	$: iframe && updateIframe(code, iframe, lang)
 
 	onMount(() => {
-		if (location && location.href === '#vim') withVim = true
+		if (location && location.hash === '#vim') withVim = true
 	})
 
 	const handleChange = () => {
