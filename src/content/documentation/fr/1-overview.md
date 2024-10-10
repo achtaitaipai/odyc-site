@@ -8,8 +8,8 @@ Odycjs est une librairie JavaScript conçue pour rendre ludique et accessible le
 
 ## Principales caractéristiques :
 
-- **Facile à apprendre** : Avec OdyCJS, commencez rapidement grâce à une API intuitive et des exemples clairs.
+- **Facile à apprendre** : Avec OdyC, commencez rapidement grâce à une API intuitive et des exemples clairs.
 - **Flexible** : Adaptez la bibliothèque à vos besoins spécifiques pour créer des expériences utilisateur uniques.
-- **Légère** : Optimisée pour une performance fluide et rapide, OdyCJS ne pèse pas sur vos ressources.
+- **Légère** : Optimisée pour une performance fluide et rapide, OdyC ne pèse pas sur vos ressources.
 
-Nous espérons que vous trouverez OdyCJS stimulant et amusant pour développer vos jeux narratifs. Bonne création !
+Nous espérons que vous trouverez OdyC stimulant et amusant pour développer vos jeux narratifs. Bonne création !

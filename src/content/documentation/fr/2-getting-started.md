@@ -39,13 +39,13 @@ Pour ceux qui préfèrent travailler localement mais sans configuration de build
 
 Si vous souhaitez utiliser un bundler comme [Vite](https://vitejs.dev/):
 
-- Installez OdyCJS via npm :
+- Installez OdyC via npm :
 
 ```bash
 npm install odyc
 ```
 
-- Importez OdyCJS dans votre fichier JavaScript ou Typescript principal :
+- Importez OdyC dans votre fichier JavaScript ou Typescript principal :
 
 ```javascript
 import { createGame } from 'odyc'

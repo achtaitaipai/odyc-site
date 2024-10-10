@@ -8,8 +8,8 @@ Odycjs is a JavaScript library designed to make the development of small video g
 
 ## Key Features:
 
-- **Easy to learn**: With OdyCJS, get started quickly thanks to an intuitive API and clear examples.
+- **Easy to learn**: With OdyC, get started quickly thanks to an intuitive API and clear examples.
 - **Flexible**: Adapt the library to your specific needs to create unique user experiences.
-- **Lightweight**: Optimized for smooth and fast performance, OdyCJS is easy on your resources.
+- **Lightweight**: Optimized for smooth and fast performance, OdyC is easy on your resources.
 
-We hope you find OdyCJS both inspiring and fun for developing your narrative games. Happy creating!
+We hope you find OdyC both inspiring and fun for developing your narrative games. Happy creating!
