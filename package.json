@@ -15,6 +15,7 @@
 		"@astrojs/svelte": "^5.2.0",
 		"@astrojs/tailwind": "^5.1.0",
 		"@codemirror/lang-javascript": "^6.2.2",
+		"@replit/codemirror-vim": "^6.2.1",
 		"astro": "^4.5.5",
 		"astro-expressive-code": "^0.37.0",
 		"odyc": "^0.0.29",
