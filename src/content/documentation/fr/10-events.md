@@ -20,7 +20,7 @@ createGame({
 			onEnter: function () {
 				alert(2)
 			},
-			onEnter: function () {
+			onLeave: function () {
 				alert(3)
 			}
 		}

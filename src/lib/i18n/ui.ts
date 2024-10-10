@@ -35,7 +35,7 @@ export const ui = {
 	fr: {
 		'hero.playtocreategames': 'Jouer à créer des jeux.',
 		'hero.description':
-			'Une petite librairie javascript qui permet de codes des jeux-vidéo, même sans expérience en programmation',
+			'Une petite librairie javascript qui permet de coder des jeux-vidéo, même sans expérience en programmation',
 		'hero.learn': 'Apprendre',
 		'hero.creategame': 'Créer un jeu',
 		'hero.exploredocs': 'Explorer la doc',
