@@ -7,6 +7,12 @@ export const defaultLang = 'fr'
 
 export const ui = {
 	en: {
+		'hero.playtocreategames': 'Play to create Games.',
+		'hero.description':
+			'A small javascript library that lets you code video games even without programming experience.',
+		'hero.learn': 'Learn',
+		'hero.creategame': 'Create a game',
+		'hero.exploredocs': 'Explore the docs',
 		'nav.tutorial': 'Tutorial',
 		'nav.playground': 'Playground',
 		'nav.documentation': 'Documentation',
@@ -27,6 +33,12 @@ export const ui = {
 		'sound.play': 'Play'
 	},
 	fr: {
+		'hero.playtocreategames': 'Jouer à créer des jeux.',
+		'hero.description':
+			'Une petite librairie javascript qui permet de codes des jeux-vidéo, même sans expérience en programmation',
+		'hero.learn': 'Apprendre',
+		'hero.creategame': 'Créer un jeu',
+		'hero.exploredocs': 'Explorer la doc',
 		'nav.tutorial': 'Tutoriel',
 		'nav.playground': 'Éditeur',
 		'nav.documentation': 'Documentation',

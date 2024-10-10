@@ -172,7 +172,7 @@ const t = useTranslations(lang)
 					fill="#40c057"></rect><rect x="7" y="7" width="1" height="1" fill="#40c057"></rect></svg
 			>
 			<span class="sr-only">Logo</span>
-			<span class="text-xl font-bold">OdycJs</span>
+			<span class="text-xl font-bold">Odyc</span>
 		</a>
 
 		<nav class="ml-auto">
@@ -201,7 +201,8 @@ const t = useTranslations(lang)
 					Object.keys(languages).map((el) => {
 						//@ts-ignore
 						const current = languages[el]
-						const href = String(Astro.url).replace(`/${lang}/`, `/${el}/`)
+						const reg = new RegExp(`/${lang}/|/${lang}$`)
+						const href = String(Astro.url).replace(reg, `/${el}/`)
 						// const [_, ...slug] = Astro.url.split("/");
 						return (
 							<li>

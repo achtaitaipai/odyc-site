@@ -16,7 +16,199 @@ const params = Astro.params
 const lang = params.lang as keyof typeof languages
 const t = useTranslations(lang)
 ---
+
 <Base>
-	<h1>OdyC, jouez à créer vos jeux.</h1>
-	<p>Une petite librairie javascript qui permet de coder des jeux-vidéo, même sans expérience en programmation.</p>
+	<main class="container mx-auto px-8">
+		<section class="grid items-center gap-12 py-28 lg:grid-cols-[7fr_4fr]">
+			<div class="grid gap-6 text-center lg:text-left">
+				<h1 class="text-8xl/tight font-black sm:text-9xl/tight">
+					<span
+						class="inline-block bg-gradient-to-r from-blue-600 to-indigo-900 bg-clip-text text-[transparent] underline decoration-gray-200 decoration-8 underline-offset-[1rem]"
+						>ODYC</span
+					>
+				</h1>
+				<h2 class="mt-4 text-4xl font-bold">{t('hero.playtocreategames')}</h2>
+				<p class="max-w-prose text-xl">
+					{t('hero.description')}
+				</p>
+				<div class="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+					<a
+						href={`/${lang}/tutorial`}
+						class="rounded-full bg-blue-700 px-4 py-2 font-semibold text-gray-50 sm:text-lg"
+						>{t('hero.learn')}</a
+					>
+					<a
+						href={`/${lang}/playground/`}
+						class="rounded-full px-4 py-2 font-semibold transition-colors hover:bg-gray-100 sm:text-lg"
+						>{t('hero.creategame')}</a
+					>
+					<a
+						href={`/${lang}/documentation/overview`}
+						class="rounded-full px-4 py-2 font-semibold transition-colors hover:bg-gray-100 sm:text-lg"
+						>{t('hero.exploredocs')}</a
+					>
+				</div>
+			</div>
+			<div class="hidden lg:block">
+				<svg viewBox="0 0 8 8"
+					><rect x="0" y="0" width="1" height="1" fill="#f06595"></rect><rect
+						x="1"
+						y="0"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="2" y="0" width="1" height="1" fill="#f06595"></rect><rect
+						x="3"
+						y="0"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="4" y="0" width="1" height="1" fill="#40c057"></rect><rect
+						x="5"
+						y="0"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="6" y="0" width="1" height="1" fill="#40c057"></rect><rect
+						x="7"
+						y="0"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="0" y="1" width="1" height="1" fill="#f06595"></rect><rect
+						x="1"
+						y="1"
+						width="1"
+						height="1"
+						fill="#fa5252"></rect><rect x="2" y="1" width="1" height="1" fill="#fa5252"></rect><rect
+						x="3"
+						y="1"
+						width="1"
+						height="1"
+						fill="#fa5252"></rect><rect x="4" y="1" width="1" height="1" fill="#f8f9fa"></rect><rect
+						x="5"
+						y="1"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="6" y="1" width="1" height="1" fill="#f8f9fa"></rect><rect
+						x="7"
+						y="1"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="0" y="2" width="1" height="1" fill="#f06595"></rect><rect
+						x="1"
+						y="2"
+						width="1"
+						height="1"
+						fill="#fa5252"></rect><rect x="2" y="2" width="1" height="1" fill="#fcc419"></rect><rect
+						x="3"
+						y="2"
+						width="1"
+						height="1"
+						fill="#fcc419"></rect><rect x="4" y="2" width="1" height="1" fill="#228be6"></rect><rect
+						x="5"
+						y="2"
+						width="1"
+						height="1"
+						fill="#228be6"></rect><rect x="6" y="2" width="1" height="1" fill="#f8f9fa"></rect><rect
+						x="7"
+						y="2"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="0" y="3" width="1" height="1" fill="#f06595"></rect><rect
+						x="1"
+						y="3"
+						width="1"
+						height="1"
+						fill="#fa5252"></rect><rect x="2" y="3" width="1" height="1" fill="#fcc419"></rect><rect
+						x="4"
+						y="3"
+						width="1"
+						height="1"
+						fill="#a52f01"></rect><rect x="5" y="3" width="1" height="1" fill="#228be6"></rect><rect
+						x="6"
+						y="3"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="7" y="3" width="1" height="1" fill="#40c057"></rect><rect
+						x="0"
+						y="4"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="1" y="4" width="1" height="1" fill="#fa5252"></rect><rect
+						x="2"
+						y="4"
+						width="1"
+						height="1"
+						fill="#fcc419"></rect><rect x="3" y="4" width="1" height="1" fill="#ced4da"></rect><rect
+						x="4"
+						y="4"
+						width="1"
+						height="1"
+						fill="#212529"></rect><rect x="5" y="4" width="1" height="1" fill="#228be6"></rect><rect
+						x="6"
+						y="4"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="7" y="4" width="1" height="1" fill="#40c057"></rect><rect
+						x="0"
+						y="5"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="1" y="5" width="1" height="1" fill="#fa5252"></rect><rect
+						x="2"
+						y="5"
+						width="1"
+						height="1"
+						fill="#fcc419"></rect><rect x="3" y="5" width="1" height="1" fill="#fcc419"></rect><rect
+						x="4"
+						y="5"
+						width="1"
+						height="1"
+						fill="#228be6"></rect><rect x="5" y="5" width="1" height="1" fill="#228be6"></rect><rect
+						x="6"
+						y="5"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="7" y="5" width="1" height="1" fill="#40c057"></rect><rect
+						x="0"
+						y="6"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="1" y="6" width="1" height="1" fill="#fa5252"></rect><rect
+						x="2"
+						y="6"
+						width="1"
+						height="1"
+						fill="#fa5252"></rect><rect x="3" y="6" width="1" height="1" fill="#fa5252"></rect><rect
+						x="4"
+						y="6"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="5" y="6" width="1" height="1" fill="#f8f9fa"></rect><rect
+						x="6"
+						y="6"
+						width="1"
+						height="1"
+						fill="#f8f9fa"></rect><rect x="7" y="6" width="1" height="1" fill="#40c057"></rect><rect
+						x="0"
+						y="7"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="1" y="7" width="1" height="1" fill="#f06595"></rect><rect
+						x="2"
+						y="7"
+						width="1"
+						height="1"
+						fill="#f06595"></rect><rect x="3" y="7" width="1" height="1" fill="#f06595"></rect><rect
+						x="4"
+						y="7"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="5" y="7" width="1" height="1" fill="#40c057"></rect><rect
+						x="6"
+						y="7"
+						width="1"
+						height="1"
+						fill="#40c057"></rect><rect x="7" y="7" width="1" height="1" fill="#40c057"></rect></svg
+				>
+			</div>
+		</section>
+	</main>
 </Base>
