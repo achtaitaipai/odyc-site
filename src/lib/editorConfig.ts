@@ -1,6 +1,5 @@
 import { javascript } from '@codemirror/lang-javascript'
 import { customTheme } from './editorTheme'
-import { vim } from '@replit/codemirror-vim'
 
 export const editorConfig = {
 	basic: true,
