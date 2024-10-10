@@ -12,5 +12,5 @@ export const editorConfig = {
 	placeholder: null,
 	lang: javascript(),
 	nodebounce: false,
-	extensions: [customTheme, ...(location.hash === '#vim' ? [vim()] : [])]
+	extensions: [customTheme, ...(window?.location && window.location.hash === '#vim' ? [vim()] : [])]
 }
