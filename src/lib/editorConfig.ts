@@ -1,7 +1,8 @@
 import { javascript } from '@codemirror/lang-javascript'
 import { customTheme } from './editorTheme'
+import { vim } from '@replit/codemirror-vim'
 
-export const editorConfig = {
+export const editorConfig = ({ withVim }: { withVim: boolean }) => ({
 	basic: true,
 	useTab: true,
 	editable: true,
@@ -11,5 +12,5 @@ export const editorConfig = {
 	placeholder: null,
 	lang: javascript(),
 	nodebounce: false,
-	extensions: [customTheme]
-}
+	extensions: [customTheme, ...(withVim ? [vim()] : [])]
+})
