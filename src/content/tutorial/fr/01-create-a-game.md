@@ -27,6 +27,6 @@ Cette simple ligne de code est le point de départ de tous les jeux créés avec
 
 ### Exercice
 
-Votre mission, si vous l'acceptez, est d'initialiser votre premier jeu en utilisant `createGame()`. Écrivez le code nécessaire dans le playground ci-dessous et observez comment OdyCJS prépare l'environnement de votre jeu. Si tout est correct, vous verrez apparaître un cadre de jeu de base, prêt à être enrichi.
+Votre mission, si vous l'acceptez, est d'initialiser votre premier jeu en utilisant `createGame()`. Écrivez le code nécessaire dans le playground et observez comment OdyCJS prépare l'environnement de votre jeu. Si tout est correct, vous verrez apparaître un cadre de jeu de base, prêt à être enrichi.
 
 N'oubliez pas : le développement de jeux est une aventure créative. N'hésitez pas à expérimenter et à jouer avec le code pour voir ce que vous pouvez créer !
