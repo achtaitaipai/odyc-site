@@ -22,7 +22,7 @@ export const getStaticPaths = (async () => {
 	})
 }) satisfies GetStaticPaths
 
-const { data, render } = await Astro.props
+const { data, render } = Astro.props
 const { title } = data
 const lang = Astro.params.lang as keyof typeof languages
 
@@ -35,7 +35,7 @@ const navItems = (await getCollection('documentation'))
 
 const { Content } = await render()
 
-const {slug} = Astro.params
+const { slug } = Astro.params
 ---
 
 <Base title={title}>

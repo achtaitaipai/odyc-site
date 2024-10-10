@@ -8,7 +8,7 @@ export type Props = {
 	currentSlug: string
 }
 
-const { lang, items, currentSlug } = await Astro.props
+const { lang, items, currentSlug } = Astro.props
 
 const formatSlug = (fileName: string) => {
 	const [_, slug] = fileName.split('/')
@@ -19,9 +19,9 @@ const formatSlug = (fileName: string) => {
 <nav
 	class="fixed hidden h-[calc(100svh_-_var(--header-height))] w-72 overflow-auto border-r px-4 py-4 xl:block"
 >
-<div class="text-lg">
-	<Search id="searchDesktop" client:only />
-</div>
+	<div class="text-lg">
+		<Search id="searchDesktop" client:only />
+	</div>
 	<ul class="mt-6 space-y-4">
 		{
 			items.map((el) => (
