@@ -20,9 +20,7 @@
 	}
 </script>
 
-<div
-	class="grid sm:grid-rows-2 grow h-svh sm:h-[calc(100svh_-_var(--header-height))] sm:col-span-3"
->
+<div class="grid sm:grid-rows-2 grow h-svh sm:h-[calc(100svh_-_var(--header-height))]">
 	<Editor
 		{...editorConfig({ withVim })}
 		class=" overflow-auto w-full h-full border-b row-start-1 bg-white"
