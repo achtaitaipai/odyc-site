@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import type { languages } from 'src/lib/i18n/ui'
+import { useTranslations } from 'src/lib/i18n/utils'
+
+const items = (await getCollection('gallery')).sort(() => Math.random() - 0.5)
+const params = Astro.params
+const lang = params.lang as keyof typeof languages
+const t = useTranslations(lang)
+---
+
+<ul class="flex snap-x snap-mandatory items-center gap-12 overflow-x-auto px-[20vw]">
+	{
+		items.map((el) => (
+			<li class="grid h-[30rem] shrink-0 snap-center grid-rows-[1fr_auto] pb-8">
+				<a href={el.data.url}>
+					<Image
+						src={el.data.screenshot}
+						alt=""
+						format="png"
+						class="h-full w-auto rounded border"
+					/>
+					<h3 class="text-lg font-bold">
+						{el.data.title} {el.data.author && t('gallery.by') + ' ' + el.data.author}
+						{el.data.lang && el.data.lang !== lang && <sup>{el.data.lang}</sup>}
+					</h3>
+				</a>
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	ul::-webkit-scrollbar {
+		display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	ul {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	img {
+		image-rendering: pixelated;
+	}
+</style>
