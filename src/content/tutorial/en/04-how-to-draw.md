@@ -51,3 +51,6 @@ In the example, the character `.` is used to mark empty spaces, but it could jus
 > - On Mac: <kbd>£</kbd> then <kbd>Space</kbd>
 
 Try to design a sprite for the player.
+
+> [!TIP]
+> If need be, you can draw inspiration from [this collection of sprites](/en/sprites)
