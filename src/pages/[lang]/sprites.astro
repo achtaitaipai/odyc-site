@@ -1,0 +1,57 @@
+---
+import sprites from 'src/content/sprites/sprites.json'
+import CopyBtn from 'src/components/tutorial/sprites/CopyBtn.svelte'
+import type { GetStaticPaths } from 'astro'
+import Base from 'src/layouts/Base.astro'
+import { languages } from 'src/lib/i18n/ui'
+import { useTranslations } from 'src/lib/i18n/utils'
+
+export const getStaticPaths = (() => {
+	return Object.keys(languages).map((lang) => ({
+		params: {
+			lang
+		}
+	}))
+}) satisfies GetStaticPaths
+
+const params = Astro.params
+const lang = params.lang as keyof typeof languages
+const t = useTranslations(lang)
+---
+
+<Base title="sprites">
+	<main
+		class="container mx-auto grid gap-12 px-8 py-12 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8"
+	>
+		{
+			sprites.map((el, i) => (
+				<div class="group relative rounded ">
+					<img src={`/sprites/${i}.png`} alt="" class="w-full" />
+					<CopyBtn toCopy={el.sprite} client:only />
+				</div>
+			))
+		}
+	</main>
+</Base>
+
+<style>
+	body {
+		background-color: #7d7d7d;
+		--fg: #b3b3b3;
+		--size: 10px;
+		--half: calc(var(--size) * 0.5);
+		background-image: linear-gradient(45deg, var(--fg) 25%, transparent 25%),
+			linear-gradient(-45deg, var(--fg) 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, var(--fg) 75%),
+			linear-gradient(-45deg, transparent 75%, var(--fg) 75%);
+		background-size: var(--size) var(--size);
+		background-position:
+			0 0,
+			0 var(--half),
+			var(--half) calc(-1 * var(--half)),
+			calc(-1 * var(--half)) 0px;
+	}
+	img {
+		image-rendering: pixelated;
+	}
+</style>
