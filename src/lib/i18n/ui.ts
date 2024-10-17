@@ -32,7 +32,9 @@ export const ui = {
 		'paint.px': 'px',
 		sound: 'Sound',
 		'sound.copy': 'Copy',
-		'sound.play': 'Play'
+		'sound.play': 'Play',
+		'sprites.copy': 'Copy',
+		'sprites.copied': 'Copied!'
 	},
 	fr: {
 		'hero.playtocreategames': 'Jouer à créer des jeux.',
@@ -60,6 +62,8 @@ export const ui = {
 		'paint.px': 'px',
 		sound: 'Son',
 		'sound.copy': 'Copier',
-		'sound.play': 'Lire'
+		'sound.play': 'Lire',
+		'sprites.copy': 'Copier',
+		'sprites.copied': 'Copié!'
 	}
 } as const

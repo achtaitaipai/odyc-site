@@ -16,7 +16,6 @@ export const getStaticPaths = (() => {
 
 const params = Astro.params
 const lang = params.lang as keyof typeof languages
-const t = useTranslations(lang)
 ---
 
 <Base title="sprites">
@@ -27,7 +26,7 @@ const t = useTranslations(lang)
 			sprites.map((el, i) => (
 				<div class="group relative rounded ">
 					<img src={`/sprites/${i}.png`} alt="" class="w-full" />
-					<CopyBtn toCopy={el.sprite} client:only />
+					<CopyBtn toCopy={el.sprite} {lang} client:only />
 				</div>
 			))
 		}
