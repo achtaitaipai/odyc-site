@@ -10,38 +10,40 @@ const lang = params.lang as keyof typeof languages
 const t = useTranslations(lang)
 ---
 
-<ul class="flex snap-x snap-mandatory items-center gap-12 overflow-x-auto px-[20vw]">
+<div class="flex h-[30rem] snap-x snap-mandatory items-center gap-12 overflow-x-auto px-[20vw]">
 	{
 		items.map((el) => (
-			<li class="grid h-[30rem] shrink-0 snap-center grid-rows-[1fr_auto] pb-8">
-				<a href={el.data.url}>
-					<Image
-						src={el.data.screenshot}
-						alt=""
-						format="png"
-						class="h-full w-auto rounded border"
-					/>
-					<h3 class="text-lg font-bold">
-						{el.data.title} {el.data.author && t('gallery.by') + ' ' + el.data.author}
-						{el.data.lang && el.data.lang !== lang && <sup>{el.data.lang}</sup>}
-					</h3>
-				</a>
-			</li>
+			<a
+				href={el.data.url}
+				class="flex h-full w-auto shrink-0 grow-0 snap-center grid-rows-[1fr_auto] flex-col pb-8"
+			>
+				<Image
+					src={el.data.screenshot}
+					alt=""
+					format="png"
+					class="h-full w-auto grow basis-0 rounded border"
+				/>
+				<h3 class="text-lg font-bold">
+					{el.data.title} {el.data.author && t('gallery.by') + ' ' + el.data.author}
+					{el.data.lang && el.data.lang !== lang && <sup>{el.data.lang}</sup>}
+				</h3>
+			</a>
 		))
 	}
-</ul>
+</div>
 
 <style>
 	/* Hide scrollbar for Chrome, Safari and Opera */
-	ul::-webkit-scrollbar {
+	div::-webkit-scrollbar {
 		display: none;
 	}
 	/* Hide scrollbar for IE, Edge and Firefox */
-	ul {
+	div {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}
 	img {
+		image-rendering: crisp-edges;
 		image-rendering: pixelated;
 	}
 </style>
