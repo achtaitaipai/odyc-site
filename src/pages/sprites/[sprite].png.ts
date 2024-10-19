@@ -1,12 +1,12 @@
 import type { APIRoute, GetStaticPaths } from 'astro'
 import sharp from 'sharp'
 import sprites from 'src/content/sprites/sprites.json'
-import {} from 'odyc'
 import { defaultColors } from 'src/components/Paint/utils'
+import { getSpriteSlug } from 'src/lib/getSpriteSlug'
 
 export const getStaticPaths = (() => {
-	return sprites.map((el, i) => ({
-		params: { sprite: i },
+	return sprites.map((el) => ({
+		params: { sprite: getSpriteSlug(el.sprite) },
 		props: { sprite: el.sprite }
 	}))
 }) satisfies GetStaticPaths
