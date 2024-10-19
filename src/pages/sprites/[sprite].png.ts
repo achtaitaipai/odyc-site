@@ -15,7 +15,6 @@ export const GET: APIRoute = async ({ props }) => {
 	const rows = props.sprite.split('\n')
 	const spriteSize = 8
 	const rawImgData = new Uint8Array(spriteSize * spriteSize * 4)
-	console.log(rows)
 	for (let y = 0; y < spriteSize; y++) {
 		for (let x = 0; x < spriteSize; x++) {
 			const cell = rows[y]?.[x]
