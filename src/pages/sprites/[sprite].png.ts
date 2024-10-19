@@ -32,6 +32,7 @@ export const GET: APIRoute = async ({ props }) => {
 	})
 		.png()
 		.toBuffer()
+	return new Response()
 	return new Response(img, {
 		status: 200,
 		headers: {
