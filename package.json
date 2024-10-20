@@ -18,7 +18,7 @@
 		"@replit/codemirror-vim": "^6.2.1",
 		"astro": "^4.5.5",
 		"astro-expressive-code": "^0.37.0",
-		"odyc": "^0.0.30",
+		"odyc": "^0.0.31",
 		"open-color": "^1.9.1",
 		"pfxr": "^1.0.8",
 		"remark-gh-alerts": "^0.0.3",
