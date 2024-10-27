@@ -4,7 +4,6 @@ import CopyBtn from 'src/components/tutorial/sprites/CopyBtn.svelte'
 import type { GetStaticPaths } from 'astro'
 import Base from 'src/layouts/Base.astro'
 import { languages } from 'src/lib/i18n/ui'
-import { useTranslations } from 'src/lib/i18n/utils'
 import { getSpriteSlug } from 'src/lib/getSpriteSlug'
 
 export const getStaticPaths = (() => {
@@ -25,7 +24,7 @@ const lang = params.lang as keyof typeof languages
 	>
 		{
 			sprites.map((el) => (
-				<div class="group relative rounded ">
+				<div class:list={['group relative rounded', { hidden: el.adult }]}>
 					<img src={`/sprites/${getSpriteSlug(el.sprite)}.png`} alt="" class="w-full" />
 					<CopyBtn toCopy={el.sprite} {lang} client:only />
 				</div>
