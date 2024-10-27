@@ -33,6 +33,13 @@ const lang = params.lang as keyof typeof languages
 	</main>
 </Base>
 
+<script>
+	if (location.hash === '#adult-only') {
+		document.querySelectorAll('div.hidden').forEach((el) => {
+			el.classList.remove('hidden')
+		})
+	}
+</script>
 <style>
 	body {
 		background-color: #7d7d7d;
