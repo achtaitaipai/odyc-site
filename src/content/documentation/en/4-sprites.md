@@ -1,22 +1,22 @@
 ---
-title: Les Sprites
+title: Sprites
 ---
 
 # Sprites
 
-Les `sprites` sont des représentations graphiques constituées de chaînes de caractères multilignes. Chaque ligne correspond à une rangée de pixels, et chaque caractère représente un pixel.
+`Sprites` are graphical representations made up of multi-line character strings. Each line corresponds to a row of pixels, and each character represents an individual pixel.
 
-- **Chiffres (0-9)** : Chaque chiffre est associé à une couleur spécifique, par exemple : 0 pour le noir, 1 pour le blanc, 2 pour le gris, etc.
-- **Nouvelles lignes** : Indiquent le début d'une nouvelle rangée de pixels.
-- **Espaces blancs, tabulations et lignes vides** : Sont ignorés et n’affectent pas l’affichage du sprite.
-- **Autres caractères** : Représentent un pixel transparent.
+- **Digits (0-9)**: Each digit corresponds to a specific color, for instance: 0 for black, 1 for white, 2 for gray, etc.
+- **New lines**: Indicate the start of a new row of pixels.
+- **Whitespace, tabs, and blank lines**: Are ignored and do not affect the sprite's display.
+- **Other characters**: Represent a transparent pixel.
 
 > [!TIP]
-> Pour créer un rectangle uni, indiquez simplement le chiffre correspondant à la couleur désirée.
+> To create a solid rectangle, simply use the digit for the desired color.
 
 ### Dimensions
 
-Par défaut, les `sprites` sont des carrés de 8x8 pixels. Vous pouvez ajuster cette taille en modifiant les propriétés `cellWidth` et `cellHeight`.
+By default, `sprites` are 8x8 pixel squares. You can adjust this size by modifying the `cellWidth` and `cellHeight` properties.
 
 ```js
 createGame({
@@ -26,33 +26,33 @@ createGame({
 })
 ```
 
-## Couleurs
+## Colors
 
-### Couleurs par défaut
+### Default Colors
 
-Voici une table des couleurs par défaut avec leur code hexadécimal :
+Here is a table of default colors with their hexadecimal codes:
 
-| Index | Couleur                                                     | Code hexadécimal |
-| ----- | ----------------------------------------------------------- | ---------------- |
-| 0     | <span style="color: #212529">noir</span>                    | #212529          |
-| 1     | <span style="color: #f8f9fa; background:black">blanc</span> | #f8f9fa          |
-| 2     | <span style="color: #ced4da">gris</span>                    | #ced4da          |
-| 3     | <span style="color: #228be6">bleu</span>                    | #228be6          |
-| 4     | <span style="color: #fa5252">rouge</span>                   | #fa5252          |
-| 5     | <span style="color: #fcc419">jaune</span>                   | #fcc419          |
-| 6     | <span style="color: #ff922b">orange</span>                  | #ff922b          |
-| 7     | <span style="color: #40c057">vert</span>                    | #40c057          |
-| 8     | <span style="color: #f06595">rose</span>                    | #f06595          |
-| 9     | <span style="color: #a52f01">marron</span>                  | #a52f01          |
+| Index | Color                                                       | Hex Code |
+| ----- | ----------------------------------------------------------- | -------- |
+| 0     | <span style="color: #212529">black</span>                   | #212529  |
+| 1     | <span style="color: #f8f9fa; background:black">white</span> | #f8f9fa  |
+| 2     | <span style="color: #ced4da">gray</span>                    | #ced4da  |
+| 3     | <span style="color: #228be6">blue</span>                    | #228be6  |
+| 4     | <span style="color: #fa5252">red</span>                     | #fa5252  |
+| 5     | <span style="color: #fcc419">yellow</span>                  | #fcc419  |
+| 6     | <span style="color: #ff922b">orange</span>                  | #ff922b  |
+| 7     | <span style="color: #40c057">green</span>                   | #40c057  |
+| 8     | <span style="color: #f06595">pink</span>                    | #f06595  |
+| 9     | <span style="color: #a52f01">brown</span>                   | #a52f01  |
 
 > [!NOTE]
-> Ces couleurs proviennent de l'exellente palette [open-color](https://yeun.github.io/open-color/)
+> These colors come from the excellent [open-color](https://yeun.github.io/open-color/) palette.
 
-### Personnalisation des couleurs
+### Customizing Colors
 
-Vous pouvez personnaliser les couleurs utilisées pour les `sprites` en définissant un tableau de chaînes de caractères interprétables en tant que [couleurs CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value). Ces couleurs peuvent être des codes hexadécimaux, des noms de couleurs, des valeurs RGB, etc.
+You can customize the colors used for `sprites` by defining an array of strings that can be interpreted as [CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). These colors can be hexadecimal codes, color names, RGB values, etc.
 
-Exemple :
+Example:
 
 ```js
 createGame({
