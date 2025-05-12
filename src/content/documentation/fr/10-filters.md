@@ -93,10 +93,10 @@ Vous pouvez également, si besoin, fournir un **vertex shader personnalisé** vi
 const myShader = `
 precision mediump float;
 uniform sampler2D u_texture;
-varying vec2 v_texCoord;
+varying vec2 v_texCoords;
 
 void main() {
-	vec4 color = texture2D(u_texture, v_texCoord);
+	vec4 color = texture2D(u_texture, v_texCoords);
 	gl_FragColor = vec4(1.0 - color.rgb, color.a); // Inversion des couleurs
 }
 `
