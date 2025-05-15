@@ -51,6 +51,3 @@ Dans l'exemple, le caractère `.` est utilisé pour marquer les espaces vides, m
 > - Sur Mac : <kbd>£</kbd> puis <kbd>Espace</kbd>
 
 Essayez de dessiner un sprite pour le joueur.
-
-> [!TIP]
-> Si besoin vous pouvez piocher ou vous inspirer de [cette collection de sprites](/fr/sprites)
