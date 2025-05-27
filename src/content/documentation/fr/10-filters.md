@@ -14,8 +14,6 @@ OdyC utilise **WebGL** pour rendre ces effets visuels. Cela permet des rendus fl
 
 L’usage des filtres est donc recommandé pour des projets ciblant des machines récentes ou des expériences courtes et visuellement marquées.
 
-Parfait ! Voici un paragraphe clair et accessible, suivi d’un exemple simple qui montre comment activer un filtre dans OdyC :
-
 ## Utilisation
 
 L’ajout d’un filtre se fait lors de la création du jeu, en ajoutant une propriété `filter` dans la configuration. Chaque filtre possède un **nom** (comme `crt`, `neon` ou `fractal`) et peut avoir des **réglages personnalisés** selon l’effet souhaité.
